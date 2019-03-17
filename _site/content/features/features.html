@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
-  <title>Markdown files</title>
-  <meta name="description" content="Creating book content">
+  <title>Features</title>
+  <meta name="description" content="This is an example book built with Jupyter Books.">
 
-  <link rel="canonical" href="https://kirstiejane.github.io/mybookname2//features/markdown.html">
+  <link rel="canonical" href="https://kirstiejane.github.io/mybookname2//content/features/features.html">
   <link rel="alternate" type="application/rss+xml" title="Kirstie's second attempt at building a jupyterbook" href="https://kirstiejane.github.io/mybookname2//feed.xml">
 
-  <meta property="og:url"         content="https://kirstiejane.github.io/mybookname2//features/markdown.html" />
+  <meta property="og:url"         content="https://kirstiejane.github.io/mybookname2//content/features/features.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Markdown files" />
-<meta property="og:description" content="Creating book content" />
+<meta property="og:title"       content="Features" />
+<meta property="og:description" content="This is an example book built with Jupyter Books." />
 <meta property="og:image"       content="" />
 
 
@@ -25,15 +25,15 @@
   "@context": "http://schema.org",
   "@type": "NewsArticle",
   "mainEntityOfPage":
-    "https://kirstiejane.github.io/mybookname2//features/markdown.html",
+    "https://kirstiejane.github.io/mybookname2//content/features/features.html",
   "headline":
-    "Markdown files",
+    "Features",
   "datePublished":
     "2019-03-17T22:26:14+00:00",
   "dateModified":
     "2019-03-17T22:26:14+00:00",
   "description":
-    "Creating book content",
+    "This is an example book built with Jupyter Books.",
   "author": {
     "@type": "Person",
     "name": "Kirstie Whitaker"
@@ -565,7 +565,7 @@ initFunction(initQuery);
       
       
       <li class="c-sidebar__chapter">
-        <a class="c-sidebar__entry "
+        <a class="c-sidebar__entry c-sidebar__entry--active"
           href="/features/features.html"
         >
           
@@ -587,7 +587,7 @@ initFunction(initQuery);
               
 
               <li class="c-sidebar__section">
-                <a class="c-sidebar__entry c-sidebar__entry--active"
+                <a class="c-sidebar__entry "
                   href="/features/markdown.html"
                 >
                   
@@ -659,17 +659,7 @@ initFunction(initQuery);
     <nav class="onthispage">
       <header><h4 class="nav__title"><i class="fa fa-list"></i>   On this page</h4></header>
       <ul class="toc__menu">
-  <li><a href="#sidebars-with-jekyll">Sidebars with Jekyll</a>
-    <ul>
-      <li><a href="#heres-a-third-level-header">Here’s a third-level header</a></li>
-    </ul>
-  </li>
-  <li><a href="#embedding-media">Embedding media</a>
-    <ul>
-      <li><a href="#adding-images">Adding images</a></li>
-      <li><a href="#adding-movies">Adding movies</a></li>
-    </ul>
-  </li>
+  <li><a href="#quickstart">Quickstart</a></li>
 </ul>
     </nav>
   </aside>
@@ -694,66 +684,27 @@ initFunction(initQuery);
             
 
             <div class="c-textbook__content">
-              <h1 id="creating-book-content">Creating book content</h1>
+              <h1 id="features">Features</h1>
 
-<p>The two kinds of files that contain course content are:</p>
+<p>This is a short demonstration textbook to show the general layout / style of textbooks built
+with Jupyter and Jekyll. The markdown files for <em>this</em> page (and others in the textbook) is generated from the notebooks
+with the <code class="highlighter-rouge">scripts/generate_textbook.py</code> script, which is called when you run <code class="highlighter-rouge">make book</code>.</p>
 
-<ul>
-  <li>Jupyter Notebooks</li>
-  <li>Markdown files</li>
-</ul>
+<p>The content for the book is contained in a folder in the site’s repository called <code class="highlighter-rouge">content/</code>. It has a
+combination of markdown and Jupyter notebooks. This content is rendered into the textbook that you see here!</p>
 
-<p>Each are contained in the <code class="highlighter-rouge">content/</code> folder and referenced from <code class="highlighter-rouge">_data/toc.yml</code>.</p>
+<p>To begin, click on one of the chapter sections in the sidebar to the left. The first section demonstrates some
+simple functionality of this repository, while the following chapters contain a subset of content from the
+<a href="https://inferentialthinking.com">Foundations in Data Science</a>.</p>
 
-<p>If the file is markdown, it will be copied over with front-matter YAML added so
-that Jekyll can parse it</p>
+<h2 id="quickstart">Quickstart</h2>
 
-<h2 id="sidebars-with-jekyll">Sidebars with Jekyll</h2>
-
-<p>You may notice that there’s a sidebar to the right (if your screen is wide enough).
-These are automatically generated from the headers that are present in your page.
-The sidebar will automatically capture all 2nd and 3rd level section headers.
-The best way to designate these headers is with <code class="highlighter-rouge">#</code> characters at the beginning
-of a line.</p>
-
-<h3 id="heres-a-third-level-header">Here’s a third-level header</h3>
-
-<p>This section is here purely to demonstrate the third-level header of the
-rendered page!</p>
-
-<h2 id="embedding-media">Embedding media</h2>
-
-<h3 id="adding-images">Adding images</h3>
-
-<p>You can reference external media like images from your markdown file. If you use
-relative paths, then they will continue to work when the markdown files are copied over,
-so long as they point to a file that’s inside of the repository.</p>
-
-<p>Here’s an image relative to the site root</p>
-
-<p><img src="../images/C-3PO_droid.png" alt="" /></p>
-
-<h3 id="adding-movies">Adding movies</h3>
-
-<p>You can even embed references to movies on the web! For example, here’s a little gif for you!</p>
-
-<p><img src="https://media.giphy.com/media/yoJC2A59OCZHs1LXvW/giphy.gif" alt="" /></p>
-
-<p>This will be included in your website when it is built.</p>
+<p>This chapter shows a couple ways to add content to your course textbook. Click on the section headers
+to the left, or on the “next” button below in order to read further.</p>
 
               <nav class="c-page__nav">
   
-    
-    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/features/features">
-      〈 <span class="u-margin-right-tiny"></span> Features and customization
-    </a>
-  
 
-  
-    
-    <a id="js-page__nav__next" class="c-page__nav__next" href="/features/notebooks">
-      Jupyter notebooks <span class="u-margin-right-tiny"></span> 〉
-    </a>
   
 </nav>
 

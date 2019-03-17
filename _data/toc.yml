@@ -54,3 +54,8 @@
   - title: Jupyter notebooks
     url: /features/notebooks
     not_numbered: true
+
+# Version control chapter
+- title: Turing Way chapter
+  url: /version_control
+  not_numbered: true
