@@ -1,3 +1,15 @@
+---
+redirect_from:
+  - "/version-control"
+title: 'Turing Way chapter'
+prev_page:
+  url: /features/notebooks
+  title: 'Jupyter notebooks'
+next_page:
+  url: 
+  title: ''
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
 # Version Control
 
 ## Prerequisites / recommended skill level
