@@ -3,7 +3,7 @@ redirect_from:
   - "/testdir/test--7-3"
 title: 'test__7_3.md'
 prev_page:
-  url: https://github.com/jupyter/jupyter-book
+  url: https://github.com/ouseful-testing/mybookname2
   title: 'GitHub repository'
 next_page:
   url: /testdir/test__7_4

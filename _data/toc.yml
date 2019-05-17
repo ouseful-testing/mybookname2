@@ -2,7 +2,7 @@
   url: /intro
   not_numbered: true
 - title: GitHub repository
-  url: https://github.com/jupyter/jupyter-book
+  url: https://github.com/ouseful-testing/mybookname2
   external: true
   not_numbered: true
 - title: Search
