@@ -2,7 +2,7 @@
 redirect_from:
   - "/testdir/test-10-4"
 interact_link: content/testdir/test_10_4.ipynb
-kernel_name: python3
+kernel_name: 
 has_widgets: false
 title: 'test_10_4'
 prev_page:
@@ -33,7 +33,7 @@ Datasets are rarely ‘clean’ and fit for purpose, so it will be necessary to 
 
 
 {:.input_area}
-```python
+```
 __plot()__
 ```
 
@@ -54,7 +54,7 @@ Take a look at the first few lines of a CSV file that holds the same data as the
 
 
 {:.input_area}
-```python
+```
 
 Country,Population (1000s),TB deaths
 Afghanistan,30552,13000.0
@@ -81,7 +81,7 @@ Before anything can be done with a CSV file with pandas, the following import st
 
 
 {:.input_area}
-```python
+```
 __In []:__
 ```
 
@@ -94,7 +94,7 @@ __In []:__
 
 
 {:.input_area}
-```python
+```
 from pandas import *
 ```
 
@@ -106,7 +106,7 @@ To read a CSV file into a dataframe, the pandas function 
 
 
 {:.input_area}
-```python
+```
 __read_csv()__
 ```
 
@@ -118,7 +118,7 @@ __read_csv()__
 
 
 {:.input_area}
-```python
+```
 __In []:__
 ```
 
@@ -131,7 +131,7 @@ __In []:__
 
 
 {:.input_area}
-```python
+```
 df = read_csv('WHO POP TB all.csv')
 ```
 
@@ -141,7 +141,7 @@ The above code creates a dataframe from the data in the file 
 
 
 {:.input_area}
-```python
+```
 __WHO POP TB__
 ```
 
@@ -152,7 +152,7 @@ __WHO POP TB__
 
 
 {:.input_area}
-```python
+```
 __all.csv__
 ```
 
@@ -162,7 +162,7 @@ __all.csv__
 
 
 {:.input_area}
-```python
+```
 __df__
 ```
 
@@ -172,7 +172,7 @@ __df__
 
 
 {:.input_area}
-```python
+```
 __read_csv()__
 ```
 
@@ -192,7 +192,7 @@ For example, because the TB deaths dataframe 
 
 
 {:.input_area}
-```python
+```
 __df __
 ```
 
@@ -202,7 +202,7 @@ has a column named ‘Country’, the 
 
 
 {:.input_area}
-```python
+```
 __sort_values()__
 ```
 
@@ -214,7 +214,7 @@ __sort_values()__
 
 
 {:.input_area}
-```python
+```
 __In []:__
 ```
 
@@ -227,7 +227,7 @@ __In []:__
 
 
 {:.input_area}
-```python
+```
 df.sort_values('Country')
 ```
 
@@ -247,7 +247,7 @@ A dataframe attribute is like a variable that can only be accessed in the contex
 
 
 {:.input_area}
-```python
+```
 __columns __
 ```
 
@@ -259,7 +259,7 @@ So the expression 
 
 
 {:.input_area}
-```python
+```
 __df.columns__
 ```
 
@@ -269,7 +269,7 @@ __df.columns__
 
 
 {:.input_area}
-```python
+```
 __columns __
 ```
 
@@ -279,7 +279,7 @@ attribute inside the dataframe 
 
 
 {:.input_area}
-```python
+```
 __df__
 ```
 
@@ -289,7 +289,7 @@ __df__
 
 
 {:.input_area}
-```python
+```
 __df:__
 ```
 
@@ -302,7 +302,7 @@ __df:__
 
 
 {:.input_area}
-```python
+```
 __In []:__
 ```
 
@@ -315,7 +315,7 @@ __In []:__
 
 
 {:.input_area}
-```python
+```
 df.columns
 ```
 
@@ -328,7 +328,7 @@ df.columns
 
 
 {:.input_area}
-```python
+```
 __Out[]:__
 ```
 
@@ -340,7 +340,7 @@ __Out[]:__
 
 
 {:.input_area}
-```python
+```
 
 Index(['Country', 'Population (1000s)', 'TB deaths'],
 dtype='object')
@@ -358,7 +358,7 @@ However, there are a number of dataframe attributes and methods that allow you t
 
 
 {:.input_area}
-```python
+```
 __ iloc()__
 ```
 
@@ -368,7 +368,7 @@ __ iloc()__
 
 
 {:.input_area}
-```python
+```
 __head()__
 ```
 
@@ -378,7 +378,7 @@ __head()__
 
 
 {:.input_area}
-```python
+```
 __tail()__
 ```
 
@@ -388,7 +388,7 @@ __tail()__
 
 
 {:.input_area}
-```python
+```
 ()
 ```
 
@@ -408,7 +408,7 @@ A dataframe has a default integer index for its rows, which starts at 0 (zero). 
 
 
 {:.input_area}
-```python
+```
 __iloc__
 ```
 
@@ -418,7 +418,7 @@ __iloc__
 
 
 {:.input_area}
-```python
+```
 __df__
 ```
 
@@ -430,7 +430,7 @@ __df__
 
 
 {:.input_area}
-```python
+```
 __In []:__
 ```
 
@@ -443,7 +443,7 @@ __In []:__
 
 
 {:.input_area}
-```python
+```
 df.iloc[0]
 ```
 
@@ -456,7 +456,7 @@ df.iloc[0]
 
 
 {:.input_area}
-```python
+```
 __Out[]:__
 ```
 
@@ -468,7 +468,7 @@ __Out[]:__
 
 
 {:.input_area}
-```python
+```
 
 Country Afghanistan
 Population (1000s) 30552
@@ -482,7 +482,7 @@ Similarly, the following code will get and display the third row of data in the 
 
 
 {:.input_area}
-```python
+```
 __df__
 ```
 
@@ -494,7 +494,7 @@ __df__
 
 
 {:.input_area}
-```python
+```
 __In []:__
 ```
 
@@ -507,7 +507,7 @@ __In []:__
 
 
 {:.input_area}
-```python
+```
 df.iloc[2]
 ```
 
@@ -520,7 +520,7 @@ df.iloc[2]
 
 
 {:.input_area}
-```python
+```
 __Out[]:__
 ```
 
@@ -532,7 +532,7 @@ __Out[]:__
 
 
 {:.input_area}
-```python
+```
 
 Country Algeria
 Population (1000s) 39208
@@ -552,7 +552,7 @@ The first few rows of a dataframe can be printed out with the 
 
 
 {:.input_area}
-```python
+```
 __head()__
 ```
 
@@ -564,7 +564,7 @@ You can tell 
 
 
 {:.input_area}
-```python
+```
 __head()__
 ```
 
@@ -574,7 +574,7 @@ __head()__
 
 
 {:.input_area}
-```python
+```
 __columns__
 ```
 
@@ -588,7 +588,7 @@ For example, executing the following code will get and display the first five ro
 
 
 {:.input_area}
-```python
+```
 __df__
 ```
 
@@ -600,7 +600,7 @@ __df__
 
 
 {:.input_area}
-```python
+```
 __In []:__
 ```
 
@@ -613,7 +613,7 @@ __In []:__
 
 
 {:.input_area}
-```python
+```
 df.head()
 ```
 
@@ -626,7 +626,7 @@ df.head()
 
 
 {:.input_area}
-```python
+```
 __Out[]:__
 ```
 
@@ -677,7 +677,7 @@ And, executing the following code will get and display the first seven rows in t
 
 
 {:.input_area}
-```python
+```
 __df.__
 ```
 
@@ -690,7 +690,7 @@ __df.__
 
 
 {:.input_area}
-```python
+```
 __In []:__
 ```
 
@@ -703,7 +703,7 @@ __In []:__
 
 
 {:.input_area}
-```python
+```
 df.head(7)
 ```
 
@@ -716,7 +716,7 @@ df.head(7)
 
 
 {:.input_area}
-```python
+```
 __Out[]:__
 ```
 
@@ -785,7 +785,7 @@ The 
 
 
 {:.input_area}
-```python
+```
 __tail()__
 ```
 
@@ -795,7 +795,7 @@ __tail()__
 
 
 {:.input_area}
-```python
+```
 __head()__
 ```
 
@@ -807,7 +807,7 @@ If no argument is given, the last five rows of the dataframe are returned, other
 
 
 {:.input_area}
-```python
+```
 __head()__
 ```
 
@@ -819,7 +819,7 @@ __head()__
 
 
 {:.input_area}
-```python
+```
 __In []:__
 ```
 
@@ -832,7 +832,7 @@ __In []:__
 
 
 {:.input_area}
-```python
+```
 df.tail()
 ```
 
@@ -845,7 +845,7 @@ df.tail()
 
 
 {:.input_area}
-```python
+```
 __Out[]:__
 ```
 
@@ -904,7 +904,7 @@ For example, like this:
 
 
 {:.input_area}
-```python
+```
 __In []:__
 ```
 
@@ -917,7 +917,7 @@ __In []:__
 
 
 {:.input_area}
-```python
+```
 df['TB deaths']
 ```
 
@@ -929,7 +929,7 @@ You then get output like this:
 
 
 {:.input_area}
-```python
+```
 __Out[]:__
 ```
 
@@ -941,7 +941,7 @@ __Out[]:__
 
 
 {:.input_area}
-```python
+```
 
 0    13000.00
 1       20.00
@@ -959,7 +959,7 @@ Notice that although there is an index, there is no column heading. This is beca
 
 
 {:.input_area}
-```python
+```
 __Series__
 ```
 
@@ -979,7 +979,7 @@ The 
 
 
 {:.input_area}
-```python
+```
 __Series__
 ```
 
@@ -989,7 +989,7 @@ __Series__
 
 
 {:.input_area}
-```python
+```
 __Series__
 ```
 
@@ -999,7 +999,7 @@ __Series__
 
 
 {:.input_area}
-```python
+```
 __DataFrame__
 ```
 
@@ -1011,7 +1011,7 @@ __DataFrame__
 
 
 {:.input_area}
-```python
+```
 __In []:__
 ```
 
@@ -1024,7 +1024,7 @@ __In []:__
 
 
 {:.input_area}
-```python
+```
 df['TB deaths'].head()
 ```
 
@@ -1037,7 +1037,7 @@ df['TB deaths'].head()
 
 
 {:.input_area}
-```python
+```
 __Out[]:__
 ```
 
@@ -1049,7 +1049,7 @@ __Out[]:__
 
 
 {:.input_area}
-```python
+```
 
 0    13000.00
 1       20.00
@@ -1067,7 +1067,7 @@ And
 
 
 {:.input_area}
-```python
+```
 __In []:__
 ```
 
@@ -1080,7 +1080,7 @@ __In []:__
 
 
 {:.input_area}
-```python
+```
 df['TB deaths'].iloc[2]
 ```
 
@@ -1093,7 +1093,7 @@ df['TB deaths'].iloc[2]
 
 
 {:.input_area}
-```python
+```
 __Out[]:__
 ```
 
@@ -1106,7 +1106,7 @@ __Out[]:__
 
 
 {:.input_area}
-```python
+```
 5100.00
 ```
 
@@ -1116,7 +1116,7 @@ However, pandas does provide a mechanism for you to get and display one or more 
 
 
 {:.input_area}
-```python
+```
 __['Country']__
 ```
 
@@ -1126,7 +1126,7 @@ __['Country']__
 
 
 {:.input_area}
-```python
+```
 __ ['Country', 'Population (1000s)']__
 ```
 
@@ -1138,7 +1138,7 @@ __ ['Country', 'Population (1000s)']__
 
 
 {:.input_area}
-```python
+```
 __In []:__
 ```
 
@@ -1151,7 +1151,7 @@ __In []:__
 
 
 {:.input_area}
-```python
+```
 df[['Country']].head()
 ```
 
@@ -1164,7 +1164,7 @@ df[['Country']].head()
 
 
 {:.input_area}
-```python
+```
 __Out[]:__
 ```
 
@@ -1203,7 +1203,7 @@ Note that the column is now named. The expression
 
 
 {:.input_area}
-```python
+```
 __ df[['Country']]__
 ```
 
@@ -1217,7 +1217,7 @@ To get a new dataframe with multiple columns you just need to put more column na
 
 
 {:.input_area}
-```python
+```
 __In []:__
 ```
 
@@ -1230,7 +1230,7 @@ __In []:__
 
 
 {:.input_area}
-```python
+```
 df[['Country', 'Population (1000s)']].head()
 ```
 
@@ -1243,7 +1243,7 @@ df[['Country', 'Population (1000s)']].head()
 
 
 {:.input_area}
-```python
+```
 __Out[]:__
 ```
 
@@ -1288,7 +1288,7 @@ The code has returned a new dataframe with just the 
 
 
 {:.input_area}
-```python
+```
 __'Country'__
 ```
 
@@ -1298,7 +1298,7 @@ __'Country'__
 
 
 {:.input_area}
-```python
+```
 __'Population (1000s)’__
 ```
 
@@ -1332,7 +1332,7 @@ Python also has what are called comparison operators, these are:
 
 
 {:.input_area}
-```python
+```
 
 ==    equals
 !=    not equal
@@ -1348,7 +1348,7 @@ Expressions involving these operators always evaluate to a Boolean value, that i
 
 
 {:.input_area}
-```python
+```
 __True__
 ```
 
@@ -1358,7 +1358,7 @@ __True__
 
 
 {:.input_area}
-```python
+```
 __False__
 ```
 
@@ -1369,7 +1369,7 @@ __False__
 
 
 {:.input_area}
-```python
+```
 
 2 = = 2      evaluates to True
 2 + 2 = = 5  evaluates to False
@@ -1388,7 +1388,7 @@ The comparison operators can be used with other types of data, not just numbers.
 
 
 {:.input_area}
-```python
+```
 'aardvark' &lt; 'zebra' evaluates to True
 ```
 
@@ -1398,7 +1398,7 @@ In Calculating over columns you saw that when applied to whole columns, the ar
 
 
 {:.input_area}
-```python
+```
 __df['Country'] &gt;= 'K'__
 ```
 
@@ -1408,7 +1408,7 @@ __df['Country'] &gt;= 'K'__
 
 
 {:.input_area}
-```python
+```
 __True__
 ```
 
@@ -1418,7 +1418,7 @@ __True__
 
 
 {:.input_area}
-```python
+```
 __False__
 ```
 
@@ -1429,7 +1429,7 @@ __False__
 
 
 {:.input_area}
-```python
+```
 
 0    False
 1    False
@@ -1447,7 +1447,7 @@ If such an expression is put within square brackets immediately after a datafram
 
 
 {:.input_area}
-```python
+```
 __True__
 ```
 
@@ -1459,7 +1459,7 @@ __True__
 
 
 {:.input_area}
-```python
+```
 df[df['Country'] &gt;= 'K']
 ```
 
@@ -1469,7 +1469,7 @@ returns a new dataframe with all the columns of 
 
 
 {:.input_area}
-```python
+```
 __df __
 ```
 
@@ -1481,7 +1481,7 @@ As another example, to see the data for countries with over 80 million inhabitan
 
 
 {:.input_area}
-```python
+```
 __df__
 ```
 
@@ -1491,7 +1491,7 @@ __df__
 
 
 {:.input_area}
-```python
+```
 __True__
 ```
 
@@ -1501,7 +1501,7 @@ __True__
 
 
 {:.input_area}
-```python
+```
 __'Population (1000s)'__
 ```
 
@@ -1511,7 +1511,7 @@ __'Population (1000s)'__
 
 
 {:.input_area}
-```python
+```
 __80000:__
 ```
 
@@ -1524,7 +1524,7 @@ __80000:__
 
 
 {:.input_area}
-```python
+```
 __In []:__
 ```
 
@@ -1537,7 +1537,7 @@ __In []:__
 
 
 {:.input_area}
-```python
+```
 df[df['Population (1000s)'] &gt; 80000]
 ```
 
@@ -1550,7 +1550,7 @@ df[df['Population (1000s)'] &gt; 80000]
 
 
 {:.input_area}
-```python
+```
 __Out[]:__
 ```
 
@@ -1686,7 +1686,7 @@ The 
 
 
 {:.input_area}
-```python
+```
 __&amp;__
 ```
 
@@ -1697,7 +1697,7 @@ __&amp;__
 
 
 {:.input_area}
-```python
+```
 
 (df['Country'] >= 'Latvia') & (df['Country'] <= 'Sweden')
 ```
@@ -1708,7 +1708,7 @@ will evaluate to a series containing Boolean values where the values are
 
 
 {:.input_area}
-```python
+```
 __True__
 ```
 
@@ -1718,7 +1718,7 @@ __True__
 
 
 {:.input_area}
-```python
+```
 __Latvia__
 ```
 
@@ -1728,7 +1728,7 @@ __Latvia__
 
 
 {:.input_area}
-```python
+```
 __Sweden__
 ```
 
@@ -1740,7 +1740,7 @@ __Sweden__
 
 
 {:.input_area}
-```python
+```
 (df['Country'] &gt;= 'Latvia') | (df['Country'] &lt;= 'Sweden')
 ```
 
@@ -1750,7 +1750,7 @@ will evaluate to 
 
 
 {:.input_area}
-```python
+```
 __True__
 ```
 
@@ -1760,7 +1760,7 @@ __True__
 
 
 {:.input_area}
-```python
+```
 __Latvia__
 ```
 
@@ -1770,7 +1770,7 @@ __Latvia__
 
 
 {:.input_area}
-```python
+```
 __Sweden__
 ```
 
@@ -1780,7 +1780,7 @@ __Sweden__
 
 
 {:.input_area}
-```python
+```
 __Brazil__
 ```
 
@@ -1794,7 +1794,7 @@ The whole expression with multiple comparisons has to be put within
 
 
 {:.input_area}
-```python
+```
 __df[…]__
 ```
 
@@ -1806,7 +1806,7 @@ As a further example, using different columns, it is relatively easy to find the
 
 
 {:.input_area}
-```python
+```
 __df__
 ```
 
@@ -1816,7 +1816,7 @@ __df__
 
 
 {:.input_area}
-```python
+```
 __Population (1000s)__
 ```
 
@@ -1826,7 +1826,7 @@ __Population (1000s)__
 
 
 {:.input_area}
-```python
+```
 __80000__
 ```
 
@@ -1836,7 +1836,7 @@ __80000__
 
 
 {:.input_area}
-```python
+```
 __TB deaths__
 ```
 
@@ -1846,7 +1846,7 @@ __TB deaths__
 
 
 {:.input_area}
-```python
+```
 10000
 ```
 
@@ -1858,7 +1858,7 @@ __TB deaths__
 
 
 {:.input_area}
-```python
+```
 __In []:__
 ```
 
@@ -1871,7 +1871,7 @@ __In []:__
 
 
 {:.input_area}
-```python
+```
 df[(df['Population (1000s)'] &gt; 80000) &amp; (df['TB deaths'] &gt; 10000)]
 ```
 
@@ -1884,7 +1884,7 @@ df[(df['Population (1000s)'] &gt; 80000) &amp; (df['TB deaths'] &gt; 10000)]
 
 
 {:.input_area}
-```python
+```
 __Out []:__
 ```
 
@@ -1967,7 +1967,7 @@ These expressions can get long and complicated, making it easy to miss a crucial
 
 
 {:.input_area}
-```python
+```
 __In []:__
 ```
 
@@ -1979,7 +1979,7 @@ __In []:__
 
 
 {:.input_area}
-```python
+```
 
 population = df['Population (1000s)'] 
 deaths = df['TB deaths']

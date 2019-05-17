@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-7-5"
+interact_link: content/testdir/test_7_5.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_7_5'
 prev_page:
   url: /testdir/test_7_4
@@ -10,8 +13,8 @@ next_page:
   title: 'test_8_3.md'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# How to get a badge
 
+# How to get a badge
 
 Getting a badge is straightforward! Here’s what you have to do:
 * read each week of the courseread each week of the course

@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-15-6"
+interact_link: content/testdir/test_15_6.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_15_6'
 prev_page:
   url: /testdir/test_15_5
@@ -10,11 +13,10 @@ next_page:
   title: 'test_15_7'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# 4 Summary 
 
+# 4 Summary
 
 Phew – you made it! Well done!
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1067.jpg)
 __Figure 11__
@@ -26,41 +28,54 @@ In particular, you have learned how to:
 * split the data contained in a dataframe into multiple groups based on the unique ‘key’ values in a single column, or unique combinations of values that appear across two or more columnssplit the data contained in a dataframe into multiple groups based on the unique ‘key’ values in a single column, or unique combinations of values that appear across two or more columns
 * an
 
-```python
+
+
+{:.input_area}
+```
 __apply__
 ```
 
+
  an 
 
-```python
+
+
+{:.input_area}
+```
 __aggregate__
 ```
 
+
  (summary) function to generate a single summary result for the group, and then combine these results to generate a summary report with as many rows as there were groups, one summary report row per group 
 
-```python
+
+
+{:.input_area}
+```
 __-apply__
 ```
 
+
  a 
 
-```python
+
+
+{:.input_area}
+```
 __filter__
 ```
+
 
  function that would use the rows contained in each group as the basis for a filtering operation, returning rows from each group who’s group properties matched the filter conditions
 * use a pivot table to generate a variety of summary reports.use a pivot table to generate a variety of summary reports.
 
 You may not have thought of performing gymnastics with data before, but as you’ve seen, we can start to work our data quite hard if we need to get it into shape!
 
-
 ## 4.1 Week 7 and 8 glossary
-
 
 Here are alphabetical lists, for quick look up, of what this week introduced.
 
 ---
-
 
 ### Concepts
 
@@ -74,64 +89,98 @@ The __split-apply-combine__ pattern describes a process in which a dataset is __
 
 ---
 
-
 ### Functions and methods
 
 
 
-```python
+
+
+{:.input_area}
+```
 __df.to_csv(filename,index=False)__
 ```
 
+
  writes the contents of the dataframe 
 
-```python
+
+
+{:.input_area}
+```
 __df__
 ```
 
+
  to a CSV file with the specified filename in the current folder. The 
 
-```python
+
+
+{:.input_area}
+```
 __index__
 ```
+
 
  parameter controls whether the dataframe index is included in the output file.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __read_csv(URL,dtype={})__
 ```
 
+
  can be used to read a CSV file in from a web location given the web address or URL of the file. We also made use of an additional parameter, 
 
-```python
+
+
+{:.input_area}
+```
 __dtype__
 ```
+
 
  to specify the data type of specified columns in a dataframe created from a CSV file.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __df.groupby(columnName)__
 ```
 
+
  or 
 
-```python
+
+
+{:.input_area}
+```
 __df.groupby(listOfColumnNames)__
 ```
 
+
  is used to split a dataframe into separate groups indexed by the unique values of 
 
-```python
+
+
+{:.input_area}
+```
 __columnName__
 ```
 
+
  or unique combinations of the column values specified in the 
 
-```python
+
+
+{:.input_area}
+```
 __listOfColumnNames.__
 ```
 
@@ -139,87 +188,131 @@ __listOfColumnNames.__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __grouped.get_group(groupName)__
 ```
+
 
  is used to retrieve a particular group of rows by group name from a set of grouped items.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __grouped.groups.keys()__
 ```
+
 
  is used to retrieve the names of groups that exist within a set of grouped items.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __grouped.aggregate(operation)__
 ```
+
 
  applies a specified operation to a group (such as sum) and then combines the results into a single dataframe indexed by group.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __grouped.apply(myFunction)__
 ```
+
 
  will apply a user defined function to the rows associated with each group in a set of grouped items and return a dataframe containing the combined rows returned from the user defined function.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __grouped.filter(myFilterFunction)__
 ```
 
+
  will apply a user defined filtration function to each group in a set of grouped items that tests each group and returns a Boolean True or False value to say whether each group has passed the filter test. The 
 
-```python
+
+
+{:.input_area}
+```
 __.filter()__
 ```
+
 
  function then returns a single dataframe that contains the combined rows from groups that the user defined filter function let through.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __ pivot_table(df, index=indexColumnNames, columns=columnsColumnNames, values=valueColumnName, aggfunc=aggregationFunction) __
 ```
 
+
  generates a pivot table from a dataframe using unique combinations of values from one or more columns specified by the 
 
-```python
+
+
+{:.input_area}
+```
 __indexColumnNames__
 ```
 
+
  list to define the row index and unique combinations of values from one or more columns specified by the 
 
-```python
+
+
+{:.input_area}
+```
 __columnsColumnNames__
 ```
 
+
  list to define the columns. The pivot table cells are calculated by applying the 
 
-```python
+
+
+{:.input_area}
+```
 __aggfunc__
 ```
 
+
  function to the 
 
-```python
+
+
+{:.input_area}
+```
 __valueColumnName__
 ```
+
 
  column in the group of rows associated with each cell.
 
 ---
 
-
 ## 4.2 What next?
-
 
          ##-- MEDIACONTENT
         RUTH ALEXANDERHello again. You've now reached the end of this course on 'learning to code for data analysis'. You've seen and experienced some of the fundamentals of programming such as basic data types and structures like numbers, strings and lists and assignments and variables to store intermediate results. You've also seen the basic techniques to obtain, clean, transform, aggregate and visualise data. With a single line of code you can filter out the missing values, join two tables or make a chart. Finally you have seen how to use interactive notebooks to write up your own data analysis as a mixture of explanatory text and runnable code. Notebooks can be easily shared among a group of colleagues or publicly which means you can make a real contribution to ongoing research and debates. We hope you're keen to apply your newly gained skills to other data sets on issues that you care about. You'll be able to find data sets you can explore and interrogate in the fields of health, education, energy, climate change, poverty, crime and many more besides. Below this video you'll find links to open data sources but don't forget that your national government or even your local authority might provide open data that's more relevant to you. In a short course like this we could only scratch the surface of coding and data analysis. We hope to have inspired you to learn more about programming, data science and data management, or even statistics. Below you'll also find links to Open University courses, qualifications and free online resources that are related to the topics of this course. Whether you continue your studies with the Open University or not we do hope you really enjoyed learning to code for data analysis. We'd love to hear your feedback and suggestions. Thanks for participating and all the best for the future. 
@@ -231,7 +324,6 @@ __valueColumnName__
 As the course comes to an end, what’s next in your learning journey? Ruth mentions extending your learning by investigating more open data.
 
 ---
-
 
 ### Exploring open data further
 
@@ -256,11 +348,9 @@ Open data published by government departments and agencies such as [performance 
 * 
 The pandas library supports a growing number of external data sources such as [Google Analytics](http://pandas.pydata.org/pandas-docs/stable/remote_data.html).
 
-
 ---
 
 ---
-
 
 ### Complete our survey
 

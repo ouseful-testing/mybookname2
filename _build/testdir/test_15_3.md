@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-15-3"
+interact_link: content/testdir/test_15_3.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_15_3.md'
 prev_page:
   url: /testdir/test_14_6
@@ -10,13 +13,12 @@ next_page:
   title: 'test_15_4'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# 1 The split-apply-combine pattern
 
+# 1 The split-apply-combine pattern
 
 In the  exercise in Week 7, you downloaded data from Comtrade that could be described as ‘heterogenous’ or mixed in some way. For example, the same dataset contained information relating to both imports and exports.
 
 To find the partner countries with the largest trade value in terms of exports means filtering the dataset to obtain just the rows containing export data and then ranking those. Finding the largest import partner requires a sort on just the import data.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1062.jpg)
 __Figure 1__
@@ -38,14 +40,11 @@ This sequence of operations is common enough for it to have been described as th
 
 You will see how to make use of this pattern using pandas next.
 
-
 ## 1.1 Splitting a dataset by grouping
-
 
 ‘Grouping’ refers to the process of splitting a dataset into sets of rows, or ‘groups’, on the basis of one or more criteria associated with each data row.
 
 Grouping is often used to split a dataset into one or more distinct groups. Each row in the dataset being grouped around can be assigned to one, and only one, of the derived groups. The rows associated with a particular group may be accessed by reference to the group or the same processing or reporting operation may be applied to the rows contained in each group on a group by group basis.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1016.jpg)
 __Figure 2__
@@ -57,14 +56,22 @@ Let’s see how to do that in pandas. Create a simple dataframe that looks like 
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 data=[['A',10],['A',15],['A',5],['A',20],
               ['B',10],['B',10],['B',5],
@@ -76,7 +83,12 @@ df
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -138,15 +150,22 @@ __Out[]:__
 </table>
 Next, use the 
 
-```python
+
+
+{:.input_area}
+```
 __groupby()__
 ```
+
 
  method to group the dataframe into separate groups of rows based on the values contained within one or more specified ‘key’ columns. For example, group the rows according to what sort of commodity each row corresponds to as specified by the value taken in the ‘Commodity’ column.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -154,10 +173,14 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 grouped = df.groupby('Commodity')
 ```
-
 
 
 The number and ‘names’ of the groups that are identified correspond to the unique values that can be found within the column or columns (which will be referred to as the ‘key columns’) used to identify the groups.
@@ -166,7 +189,10 @@ You can see what groups are available with the following method call:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -174,7 +200,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 grouped.groups.keys()
 ```
 
@@ -182,7 +213,12 @@ grouped.groups.keys()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out []:__
 ```
 
@@ -190,23 +226,34 @@ __Out []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 ['A', 'C', 'B']
 ```
 
 
-
 The 
 
-```python
+
+
+{:.input_area}
+```
 __get_group()__
 ```
+
 
  method can be used to grab just the rows associated with a particular group.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -214,7 +261,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 grouped.get_group('B')
 ```
 
@@ -222,7 +274,12 @@ grouped.get_group('B')
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out []:__
 ```
 
@@ -254,35 +311,41 @@ __Out []:__
 </table>
 Datasets can also be grouped against multiple columns. For example, if there was an extra ‘Year’ column in the above table, you could group against just the commodity, exactly as above, to provide access to rows by commodity; just the year, setting 
 
-```python
+
+
+{:.input_area}
+```
 __grouped = df.groupby( 'Year' );__
 ```
+
 
  or by both commodity and year, passing in the two grouping key columns as a list:
 
 
 
-```python
+
+
+{:.input_area}
+```
 grouped = df.groupby( ['Commodity','Year'])
 ```
-
 
 
 The list of keys associated with the groups might then look like [(‘A’, 2015), (‘A’, 2014), (‘B’, 2015), (‘B’, 2014)]. The rows associated with the group corresponding to commodity A in 2014 could then be retrieved using the command:
 
 
 
-```python
+
+
+{:.input_area}
+```
 grouped.get_group( ('A',2014) )
 ```
 
 
-
 This may seem to you like a roundabout way of filtering the dataframe as you did in Week 2; but you’ll see that the ability to automatically group rows sets up the possibility of then processing those rows as separate ‘mini-dataframes’ and then combining the results back together.
 
-
 ### Exercise 2 Grouping data
-
 
 #### Question
 
@@ -294,12 +357,9 @@ As you complete the tasks, think about these questions:
 
 
 
-
 ## 1.2 Looking at apply and combine operations
 
-
 Having split a dataset by grouping, an operation is ‘applied’ to each group.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1063.jpg)
 __Figure 3__
@@ -308,9 +368,13 @@ A close-up image of a cubes of wood interlaced, making a pattern
 The operation often takes one of two forms:
 * a ‘summary’ operation, in which a summary statistic based on the rows contained within each group is generated. A single value is returned for each group, for example, the group median or mean, the number of rows in the group, or the maximum or minimum value in the group. The final result will havea ‘summary’ operation, in which a summary statistic based on the rows contained within each group is generated. A single value is returned for each group, for example, the group median or mean, the number of rows in the group, or the maximum or minimum value in the group. The final result will have *M* rows, one for each of the M groups created by the split (that is, . 
 
-```python
+
+
+{:.input_area}
+```
 __groupby()__
 ```
+
 
  ) operation.
 * a ‘filtering’ or ‘filtration’ operation, in which groups of rows are retained or discarded based on a particular property of the group as a whole. For example, only groups of rows where the sum of all the values in the group is above some threshold are retained. The effect is that each group keeps the same number of rows, but the resulting dataset (after combination, see below) may contain fewer groups than the original.a ‘filtering’ or ‘filtration’ operation, in which groups of rows are retained or discarded based on a particular property of the group as a whole. For example, only groups of rows where the sum of all the values in the group is above some threshold are retained. The effect is that each group keeps the same number of rows, but the resulting dataset (after combination, see below) may contain fewer groups than the original.
@@ -319,14 +383,11 @@ The results of applying the summary or filtration operation are then combined to
 
 In the next section, you will see how to apply a variety of summary operations, and in a later step examples of filtration operations.
 
-
 ## 1.3 Summary operations
-
 
 Summary, or aggregation, operations are used to produce a single summary value or statistic, such as the group average, for each separate group.
 
 Find the ‘total’ amount within each group using a __summary__ operation:
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1014.jpg)
 __Figure 4__
@@ -334,9 +395,13 @@ __Figure 4__
 applying a summary operator to the rows contained within each group for each group separately: Three tables one for each Commodity A, B and C with their amounts. Amount for each commodity are then totalled 
 To apply a summary operator to each group, such as a function to find the mean value of each group, and then automatically combine the results into a single output dataframe, pass the name of the function in to the 
 
-```python
+
+
+{:.input_area}
+```
 __aggregate()__
 ```
+
 
  method. Note that pandas will try to use this operator to summarise each column in the grouped rows separately if there is more than one column that can be summarised. So for example, if there was a ‘Volume’ column, it would also return total volumes.
 
@@ -344,7 +409,10 @@ Let’s use again the example dataframe defined earlier:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -352,7 +420,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 df
 ```
 
@@ -360,7 +433,12 @@ df
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -422,22 +500,34 @@ __Out[]:__
 </table>
 Group the data by commodity type and then apply the 
 
-```python
+
+
+{:.input_area}
+```
 __sum__
 ```
+
 
  operation and combine the results in an output dataframe. The grouping elements are used to create index values in the output dataframe.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 grouped=df.groupby('Commodity')
 grouped.aggregate(sum)
@@ -446,7 +536,12 @@ grouped.aggregate(sum)
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -478,18 +573,25 @@ __Out[]:__
 </table>
 In this case, the 
 
-```python
+
+
+{:.input_area}
+```
 __aggregate()__
 ```
 
+
  method applies the sum summary operation to each group and then automatically combines the results. For a __summary__ operation such as this, the resulting combined dataframe contains as many rows as there were groups created by the splitting 
 
-```python
+
+
+{:.input_area}
+```
 __.groupby()__
 ```
 
- operation.
 
+ operation.
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1015.jpg)
 __Figure 5__
@@ -497,29 +599,45 @@ __Figure 5__
 the individual summaries, the results of the previous image, for each group Commodities A, B and C are combined into a single dataframe 
 The slightly more general 
 
-```python
+
+
+{:.input_area}
+```
 __apply()__
 ```
 
+
  method can also be substituted for the 
 
-```python
+
+
+{:.input_area}
+```
 __aggregate()__
 ```
+
 
  method and will similarly take the rows associated with each group, apply a function to them, and return a combined result.
 
 The 
 
-```python
+
+
+{:.input_area}
+```
 __apply()__
 ```
+
 
  method can be really handy if you have defined a function of your own that you want to apply to just the rows associated with each group. Simply pass the name of the function to the 
 
-```python
+
+
+{:.input_area}
+```
 __apply()__
 ```
+
 
  method and it will then call your function, once per group, on the sets of rows associated with each group.
 
@@ -527,14 +645,22 @@ For example, find the top two items by ‘Amount’ in each group:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 def top2byAmount(g): 
         return g.sort_values('Amount', ascending=False).head(2)
@@ -544,7 +670,12 @@ grouped.apply(top2byAmount)
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -598,15 +729,17 @@ The second index column containing the numbers 3, 1, 4 etc., contains the origin
 
 In Week 3 the 
 
-```python
+
+
+{:.input_area}
+```
 __apply()__
 ```
 
+
  method was called on a column, to apply the given function to each cell. Here it was called on a grouped dataframe, to apply the given function to each group.
 
-
 ### Exercise 3 Experimenting with split-apply-combine
-
 
 #### Question
 
@@ -618,9 +751,7 @@ As you complete the tasks, think about these questions:
 
 
 
-
 ## 1.4 Filtering groups
-
 
 Being able to group rows according to some criterion and then apply various operations to those groups is a very powerful technique.
 
@@ -631,22 +762,28 @@ However, there may be occasions when you only want to work with a subset of the 
 
 In the following example, where groups are selected based on group size, a filtering operation is applied to limit an original dataset so that it includes just those groups containing at least three rows, combining the rows from the selected groups back together again to produce the output dataset:
 
-
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1017.jpg)
 __Figure 6__
 
 dataframe for each commodity A, B and C and their amounts. Filter operation applied to select rows associated with groups that pass a filtration test applied to each group and combined into one dataframe. 
 In pandas, groups can be filtered based on their group properties using the 
 
-```python
+
+
+{:.input_area}
+```
 __filter()__
 ```
+
 
  method. Using the example dataframe again:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -654,7 +791,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 df
 ```
 
@@ -662,7 +804,12 @@ df
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -728,14 +875,22 @@ As a reference point, count how many rows are associated with each group.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 grouped = df.groupby('Commodity')
 grouped.aggregate(len)
@@ -744,7 +899,12 @@ grouped.aggregate(len)
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -776,48 +936,76 @@ __Out[]:__
 </table>
 The 
 
-```python
+
+
+{:.input_area}
+```
 __filter()__
 ```
 
+
  method uses a function that returns a boolean ( 
 
-```python
+
+
+{:.input_area}
+```
 __True__
 ```
 
+
  or 
 
-```python
+
+
+{:.input_area}
+```
 __False__
 ```
+
 
  ) value to decide whether or not to filter through the rows associated with a particular group.
 
 As with the 
 
-```python
+
+
+{:.input_area}
+```
 __apply()__
 ```
 
+
  method, provide the 
 
-```python
+
+
+{:.input_area}
+```
 __filter()__
 ```
+
 
  method with just a function name in order to pass each group to that function. For example, define a function that says whether or not a group contains three or fewer rows and use that as a basis for filtering the original dataset.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 def groupsOfAtMostThreeRows(g): 
         return len(g) <= 3 
@@ -827,7 +1015,12 @@ grouped.filter(groupsOfAtMostThreeRows)
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -871,14 +1064,22 @@ Alternatively, all the rows in a group can be filtered on an aggregate property 
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 #Consider the following total amounts by group
 grouped.aggregate(sum)
@@ -887,7 +1088,12 @@ grouped.aggregate(sum)
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -919,14 +1125,22 @@ __Out[]:__
 </table>
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 pivot_table(df,
                index=['Commodity','Partner'], 
@@ -937,7 +1151,12 @@ pivot_table(df,
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -984,9 +1203,7 @@ __Out[]:__
 </table>
 The ability to filter datasets based on group properties means that large datasets can more easily be limited to just those rows associated with groups of rows that are deemed to be relevant in some way.
 
-
 ### Exercise 4 Filtering groups
-
 
 #### Question
 

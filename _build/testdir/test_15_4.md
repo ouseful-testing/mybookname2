@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-15-4"
+interact_link: content/testdir/test_15_4.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_15_4'
 prev_page:
   url: /testdir/test_15_3
@@ -10,8 +13,8 @@ next_page:
   title: 'test_15_5'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# 2 Pivot tables
 
+# 2 Pivot tables
 
 One of the most useful, if poorly understood, features offered by many spreadsheet applications is the ‘pivot table’.
 
@@ -21,16 +24,19 @@ The screenshot of the interactive pivot table shown below, based on a widget ori
 
 The pivot table is organised as follows:
 
-
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1022.jpg)
 __Figure 7__
 
 Screen shot of the interactive pivot table.
 You can see how the ‘Trade Flow’ and ‘Reporter’ columns are used to group the data, with each row representing a separate group. In addition, the values in the ‘Year’ column are broken out to create separate columns (although in this example there is only data for one year, and hence one ‘Year’ column, 2014). The function that is applied to the grouped data is a 
 
-```python
+
+
+{:.input_area}
+```
 __sum__
 ```
+
 
  operation, and it is applied to the selected ‘Trade Value (US$)’ column in the original dataset. A marginal total value is calculated by summing across all the columns. The ‘Commodity’ and ‘Trade Value (US$)’ columns, while part of the original dataset, are not directly used to define the pivot table’s structure; that is, they are not used to set the row or column index header labels in the displayed pivot table.
 
@@ -49,9 +55,7 @@ In addition, one or more ‘filters’ can be added to the selection of row and 
 
 It is often easier to understand how a pivot table is organised by using it interactively. You’ll get a chance to do this in the next exercise.
 
-
 ### Exercise 5 Interactive pivot table
-
 
 #### Question
 
@@ -63,12 +67,9 @@ How easy did you find it to use the interactive pivot table? Could you work out 
 
 
 
-
 ## 2.1 Pivot tables in pandas
 
-
 The interactive pivot table provides a convenient way of exploring a relatively small dataset directly within a web browser. (A python package is also available that allows interactive pivot tables to be created directly from a pandas dataframe.)
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1064.jpg)
 __Figure 8__
@@ -91,21 +92,28 @@ The process is similar when it comes to using pivot tables in pandas. Indeed, yo
 
 ---
 
-
 ### Working with pandas pivot tables
 
 Let’s start by creating a sample dataset that includes several different columns that can be grouped around. The code below defines the dataframe column by column, instead of row by row as you have learned before.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 
 df = DataFrame({"Commodity":["A","A","A","A","B","B","B","C","C"],
@@ -119,7 +127,12 @@ df
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -203,57 +216,89 @@ Suppose, for example, that you have data for a particular reporter country, and 
 
 In the interactive pivot table, this would have meant ordering the ‘Commodity’ and ‘Partner’ labels in the rows area, setting the aggregation function to 
 
-```python
+
+
+{:.input_area}
+```
 __sum__
 ```
+
 
  and applying it to the ‘Amount’ (that is, the ‘Trade Value’), and leaving the columns area free of any selections.
 
 In turn, the pandas 
 
-```python
+
+
+{:.input_area}
+```
 __pivot_table()__
 ```
+
 
  function uses:
 * thethe 
 
-```python
+
+
+{:.input_area}
+```
 __index__
 ```
+
 
  parameter set as a list containing the ‘Commodity’ and ‘Reporter’ data elements, to define the row categories
 * thethe 
 
-```python
+
+
+{:.input_area}
+```
 __values__
 ```
+
 
  parameter set to ‘Amount’
 * thethe 
 
-```python
+
+
+{:.input_area}
+```
 __aggfunc__
 ```
 
+
  (aggregating function) set to 
 
-```python
+
+
+{:.input_area}
+```
 __sum__
 ```
+
 
  .
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 pivot_table(df,
 index=['Commodity','Partner'],
@@ -264,7 +309,12 @@ aggfunc=sum)
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -326,14 +376,22 @@ To further subdivide the data, an additional ‘Flow’ grouping element could b
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 pivot_table(df,
                index=['Commodity','Partner','Flow'], 
@@ -344,7 +402,12 @@ pivot_table(df,
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -417,7 +480,10 @@ __Out[]:__
 Alternatively, you might decide that you want to pull out the ‘Flow’ items into separate columns for each of the original (‘commodity’, ‘partner’) groupings. To do this, add in a columns parameter:
 
 
-```python
+
+
+{:.input_area}
+```
 
 pivot_table(df,
         index=['Commodity','Partner'],
@@ -425,6 +491,7 @@ pivot_table(df,
         values='Amount',
         aggfunc=sum)
 ```
+
 
 <table xmlns:str="http://exslt.org/strings">
 <caption></caption>
@@ -483,14 +550,22 @@ In this case, some missing values arise for cases where there was no original ro
 
 The pandas produced pivot table can be further extended to report ‘marginal’ items, that is, row and column based total amounts, by setting 
 
-```python
+
+
+{:.input_area}
+```
 __margins=True.__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 pivot_table(df,
         index=['Commodity','Partner'],
@@ -499,6 +574,7 @@ pivot_table(df,
         aggfunc=sum,
         margins=True) 
 ```
+
 
 <table xmlns:str="http://exslt.org/strings">
 <caption></caption>
@@ -574,9 +650,7 @@ In terms of the ‘split-apply-combine’ pattern, the pandas pivot table operat
 
 The selected operator is then applied to each group and the results combined in an appropriately structured output display table.
 
-
 ### Exercise 6 pivot tables with pandas
-
 
 #### Question
 
@@ -584,24 +658,24 @@ Use the Exercise notebook 4 to explore the creation of pivot tables using pandas
 
 Did you manage to ask any new questions of your data using the pandas pivot table function? You could try using them in combination with other pandas functions, such as 
 
-```python
+
+
+{:.input_area}
+```
 __filter()__
 ```
+
 
  , to limit the rows you generated the pivot table against. What did the pivot tables tell you about the levels of trade around the trade item and reporter country you selected?
 
 One reason that pivot tables are often thought of as difficult to use is that there is a lot of data manipulation going on inside them. The data is grouped across rows, split across columns and may be aggregated in various ways. It can sometimes be hard to work out how to structure the output report you want, even before worrying about the programming code syntax. Given that, consider what you think the benefits of using code are as opposed to interactive pivot tables. Think about how you could use them to complement each other.
 
 
-
 ---
-
 
 ## 2.2 Looking at the milk and cream trade
 
-
 This week’s project looks at the milk and cream trade between the UK and other countries in the first five months of 2015.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1065.jpg)
 __Figure 9__
@@ -613,12 +687,9 @@ The structure is very simple: besides the introduction and the conclusions, ther
 
 Extend or create your own project next.
 
-
 ## 2.3 Your project
 
-
 If you have time, extend my project to answer different questions or create your own project.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1066.jpg)
 __Figure 10__
@@ -626,7 +697,6 @@ __Figure 10__
 An image of a young man writing in a notebook at a desk in front of a brick wall. There is a second notebook, a cup and saucer and a vase of flowers on the desk. 
 
 ### Activity 1 Extend the project
-
 
 #### Question
 
@@ -642,9 +712,7 @@ Make a copy of the project notebook and change it to answer one or all of the fo
 
 
 
-
 ### Activity 2 Create a project (optional)
-
 
 #### Question
 

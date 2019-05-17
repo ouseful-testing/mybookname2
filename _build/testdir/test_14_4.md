@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-14-4"
+interact_link: content/testdir/test_14_4.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_14_4'
 prev_page:
   url: /testdir/test_14_3
@@ -10,17 +13,20 @@ next_page:
   title: 'test_14_5'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# 1 I spy with my little eye
 
+# 1 I spy with my little eye
 
 One of the ways you are shown for loading World Bank data into the notebook in Week 7, was to use the 
 
-```python
+
+
+{:.input_area}
+```
 __download ()__
 ```
 
- function.
 
+ function.
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1059.jpg)
 __Figure 1__
@@ -30,14 +36,22 @@ One way to find out for yourself what sorts of argument a function expects is to
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 from pandas.io.wb import download
 ?download
@@ -46,30 +60,46 @@ from pandas.io.wb import download
 
 The function documentation tells you that you can enter a list of one or more country names using standard country codes as well as a date range. You can also calculate a date range from a single date to show the 
 
-```python
+
+
+{:.input_area}
+```
 __N__
 ```
+
 
  years of data leading up to a particular year.
 
 Note that if you are using the CoCalc free plan, you will not be able to use the 
 
-```python
+
+
+{:.input_area}
+```
 __download ()__
 ```
+
 
  function to download the data directly from the World Bank API, although you will still be able to inspect the documentation associated with the function.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 YEAR = 2013
 GDP_INDICATOR = 'NY.GDP.MKTP.CD'
@@ -83,7 +113,12 @@ gdp
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -177,7 +212,10 @@ In the above example, you will probably notice that each country name appears in
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -185,7 +223,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 gdp.groupby('country')['NY.GDP.MKTP.CD'].aggregate(sum)
 
@@ -195,14 +238,24 @@ gdp.groupby('country')['NY.GDP.MKTP.CD'].aggregate(sum)
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 country
 China             4.110217e+13
@@ -217,7 +270,10 @@ The total combined GDP for those two countries in each year could be found by ma
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -225,7 +281,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 gdp.groupby('year')['NY.GDP.MKTP.CD'].aggregate(sum)
 
@@ -235,14 +296,24 @@ gdp.groupby('year')['NY.GDP.MKTP.CD'].aggregate(sum)
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 year
 2008    7.350113e+12
@@ -259,12 +330,9 @@ That second calculation probably doesn’t make much sense in this particular ca
 
 Next, you will consider ways of grouping data.
 
-
 ## 1.1 Ways of grouping data
 
-
 Think back to the weather dataset you used in Week 3 , how might you group that data into several distinct groups? What sorts of comparisons could you make by grouping just the elements of that dataset? Or how might you group and compare the GDP data?
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1060.jpg)
 __Figure 2__
@@ -276,9 +344,7 @@ Or with the GDP data, if countries were assigned to economic groupings such as t
 
 This week you will learn how to split data into groups based on particular features of the data, and then generate information about each separate group, across all of the groups, at the same time.
 
-
 ### Activity 1 Grouping data
-
 
 #### Question
 
@@ -286,16 +352,13 @@ Based on the data you have seen so far, or some other datasets you may be aware 
 
 
 
-
 ## 1.2 Data that describes the world of trade
-
 
 A news article from the *Guardian* announcing a gloomy export outlook for UK manufacturers (see the link below), got me wondering about what sorts of thing different countries actually export.
 
 For example, it might surprise you that India was the world’s largest exporter by value of unset diamonds in 2014 (24 billion US dollars worth), or that Germany was the biggest importer of chocolate (over $2.5 billion worth) in that same year.
 
 National governments all tend to publish their own trade figures, but the UN also collect data from across the world. In particular, the UN’s global trade database, Comtrade, contains data about import and export trade flows between countries for a wide range of goods and services.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1061.jpg)
 __Figure 3__
@@ -305,24 +368,18 @@ So if you’ve ever wondered where your country imports most of its T-shirts fro
 
 In the next section, you will find out about the Comtrade data.
 
-
 ## 1.3 Exploring the world of export data
-
 
 The Comtrade Data Extraction interface provides a user interface for selecting, previewing and exporting data from the Comtrade database.
 
-
 ### Activity 2 Exploring export data
-
 
 #### Question
 
 Open the [Comtrade Data Extraction interface](http://comtrade.un.org/data/) and keep it open alongside this page. You’ll explore the options and preview some data.
 
-
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1020.jpg)
 __Figure 4:__ Comtrade Data Extraction interface 
-
 
 In the text area marked __HS (as reported) commodity codes__ , start to enter the name of various goods and services. You should see suggestions regarding different goods and services that Comtrade records trade flow data for.
 
@@ -346,21 +403,16 @@ For a particular category of goods, and a reporting period of a single month or 
 Does the range of goods and services listed within the database surprise you?
 
 
-
 Keep the Comtrade webpage open as you’ll use it again in the next section.
 
-
 ## 1.4 Getting data from the Comtrade API
-
 
 Hopefully, you have a few ideas about data you’d like to explore from the Comtrade database.
 
 In the previous section, I managed to identify a set of data that describes the amount of unset diamonds (commodity code 7102) imported into the UK from the Russian Federation, Angola and South Africa in 2013 and 2014.
 
-
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1021.jpg)
 __Figure 5__ Comtrade Data Extraction interface 
-
 
 You can export the data you have selected as a CSV file that will be downloaded to your own computer by clicking on the *Download CSV* button. You may find it useful to change the filename of the downloaded file to something more meaningful than the comtrade.csv default name.
 
@@ -368,14 +420,22 @@ If you moved the downloaded CSV file into the same folder as your Exercise noteb
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 filename='comtrade.csv
 
@@ -386,9 +446,13 @@ filename='comtrade.csv
 
 The ‘Commodity Code’ and ‘Reporter Code’ values are explicitly read in as a string 
 
-```python
+
+
+{:.input_area}
+```
 __(str)__
 ```
+
 
  otherwise codes like 0401 will be returned as the number 401.
 
@@ -396,14 +460,22 @@ One of the problems of working with real data like this is that it may not be ju
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 
 COLUMNS = ['Year', 'Period','Trade Flow','Reporter','Partner', 'Commodity','Commodity Code','Trade Value (US$)']
@@ -416,14 +488,22 @@ To avoid conflating data relating to all countries (the ‘World’ partner), an
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 world = df[df['Partner'] == 'World']
 countries = df[df['Partner'] != 'World']
@@ -431,7 +511,6 @@ countries = df[df['Partner'] != 'World']
 
 
 ---
-
 
 ### A More Direct Way of Getting the Data
 
@@ -443,9 +522,13 @@ In the case of Comtrade, clicking the *View API Link* reveals a URL that request
 
 This link can be used to download data directly into a pandas dataframe from Comtrade, although you will need to make a couple of modifications to the URL first. In particular, change the max value to 5000 (to increase the amount of data returned by each request) and add 
 
-```python
+
+
+{:.input_area}
+```
 __&amp;fmt=csv__
 ```
+
 
  to the end of the URL to ensure that the data is returned in a CSV format.
 
@@ -459,9 +542,13 @@ http://comtrade.un.org/api/get?max= __5000__ &amp;type=C&amp;freq=M&amp;px=HS&am
 
 You can then load the data in using the panda 
 
-```python
+
+
+{:.input_area}
+```
 __read_csv()__
 ```
+
 
  function.
 
@@ -469,22 +556,34 @@ __read_csv()__
 
 Set the datatypes as shown using the 
 
-```python
+
+
+{:.input_area}
+```
 __dtype__
 ```
+
 
  argument to ensure that the codes are read in correctly.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 
 URL='http://comtrade.un.org/api/get?max=5000&type=C&freq=A&px=HS&ps=2014%2C2013%2C2012&r=826&p=all&rg=all&cc
@@ -501,39 +600,46 @@ Having downloaded the data, you should then separate out the World data as befor
 
 If you want to save a copy of data downloaded into pandas directly from the Comtrade API, call the 
 
-```python
+
+
+{:.input_area}
+```
 __to_csv()__
 ```
 
+
  method on your dataframe, pasting in the filename you want to save the file under, and setting 
 
-```python
+
+
+{:.input_area}
+```
 __index=False__
 ```
+
 
  so that the dataframe’s automatically introduced index column is not included. For example:
 
 
 
-```python
+
+
+{:.input_area}
+```
 
 countries.to_csv('saved_country_data_example.csv', index=False)
 
 ```
 
 
-
 The file will be saved in the same folder as the notebook.
 
 ---
 
-
 ## 1.5 Practice getting data
 
 
-
 ### Exercise 1 Getting data from API
-
 
 #### Question
 

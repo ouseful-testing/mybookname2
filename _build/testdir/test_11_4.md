@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-11-4"
+interact_link: content/testdir/test_11_4.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_11_4'
 prev_page:
   url: /testdir/test_11_3
@@ -10,28 +13,39 @@ next_page:
   title: 'test_11_5'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# 2 Every picture tells a story
 
+# 2 Every picture tells a story
 
 It can be difficult and confusing to look at a table of rows of numbers and make any meaningful interpretation especially if there are many rows and columns.
 
 Handily, pandas has a method called 
 
-```python
+
+
+{:.input_area}
+```
 __plot()__
 ```
+
 
  which will visualise data for us by producing a chart.
 
 Before using the 
 
-```python
+
+
+{:.input_area}
+```
 __plot()__
 ```
 
+
  method, the following line of code must be executed (once) which tells Jupyter to display all charts inside this notebook, immediately after each call to 
 
-```python
+
+
+{:.input_area}
+```
 __plot():__
 ```
 
@@ -39,7 +53,12 @@ __plot():__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -47,23 +66,34 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 %matplotlib inline
 ```
 
 
-
 To plot 
 
-```python
+
+
+{:.input_area}
+```
 __‘Max Wind SpeedKm/h__
 ```
+
 
  ’, it’s as simple as this code:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -71,7 +101,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 london['Max Wind SpeedKm/h'].plot(grid=True)
 ```
 
@@ -79,9 +114,15 @@ london['Max Wind SpeedKm/h'].plot(grid=True)
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
+
 
 
 
@@ -92,21 +133,32 @@ __Figure 10__
 Chart of the values in the Max Wind SpeedKm/h column of the london dataframe. 
 The 
 
-```python
+
+
+{:.input_area}
+```
 __grid=True__
 ```
 
+
  argument makes the gridlines (the dotted lines in the image above) appear, which make values easier to read on the chart. The chart comes out a bit small, so you can make it bigger by giving the 
 
-```python
+
+
+{:.input_area}
+```
 __plot()__
 ```
+
 
  method some extra information. The figsize units are inches.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -114,7 +166,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 london['Max Wind SpeedKm/h'].plot(grid=True, figsize=(10,5))
 
@@ -124,9 +181,15 @@ london['Max Wind SpeedKm/h'].plot(grid=True, figsize=(10,5))
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
+
 
 
 
@@ -137,21 +200,33 @@ __Figure 11__
 Larger version of the first chart on this page
 That’s better! The argument given to the 
 
-```python
+
+
+{:.input_area}
+```
 __plot()__
 ```
+
 
  method, 
 
-```python
+
+
+{:.input_area}
+```
 __figsize=(10,5)__
 ```
 
+
  simply tells 
 
-```python
+
+
+{:.input_area}
+```
 __plot()__
 ```
+
 
  that the x-axis should be 10 units wide and the y-axis should be 5 units high. In the above graph the x-axis (the numbers at the bottom) shows the dataframe’s index, so 0 is 1 January and 50 is 18 February.
 
@@ -159,15 +234,17 @@ The y-axis (the numbers on the side) shows the range of wind speed in kilometres
 
 By default, the 
 
-```python
+
+
+{:.input_area}
+```
 __plot()__
 ```
 
+
  method will try to generate a line, although as you’ll see in a later week, it can produce other chart types too.
 
-
 ### Exercise 5 Every picture tells a story
-
 
 #### Question
 
@@ -177,86 +254,132 @@ If you’re using Anaconda, remember that to open the notebook you’ll need to 
 
 
 
-
 ## 2.1 Changing a dataframe’s index
-
 
 We have seen that by default every dataframe has an integer index for its rows which starts from 0.
 
 The dataframe we’ve been using, 
 
-```python
+
+
+{:.input_area}
+```
 __london__
 ```
 
+
  , has an index that goes from 
 
-```python
+
+
+{:.input_area}
+```
 __0__
 ```
+
 
  to 
 
-```python
+
+
+{:.input_area}
+```
 __364__
 ```
+
 
 . The row indexed by 
 
-```python
+
+
+{:.input_area}
+```
 __0__
 ```
 
+
  holds data for the first day of the year and the row indexed by 
 
-```python
+
+
+{:.input_area}
+```
 __364__
 ```
 
+
  holds data for the last day of the year. However, the column 
 
-```python
+
+
+{:.input_area}
+```
 __'GMT'__
 ```
 
+
  holds 
 
-```python
+
+
+{:.input_area}
+```
 __datetime64__
 ```
+
 
  values which would make a more intuitive index.
 
 Changing the index to 
 
-```python
+
+
+{:.input_area}
+```
 __datetime64__
 ```
 
+
  values is as easy as assigning to the dataframe’s 
 
-```python
+
+
+{:.input_area}
+```
 __index__
 ```
 
+
  attribute the contents of the 
 
-```python
+
+
+{:.input_area}
+```
 __'GMT'__
 ```
+
 
  column, like this:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 london.index = london['GMT']
 #Display the first 2 rows
@@ -266,9 +389,15 @@ london.head(2)
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
+
 
 
 
@@ -281,29 +410,44 @@ First 2 rows of the london dataframe showing that the index has been changed to 
 
 Notice that the 
 
-```python
+
+
+{:.input_area}
+```
 __'GMT'__
 ```
+
 
  column still remains and that the index has been labelled to show that it has been derived from the 
 
-```python
+
+
+{:.input_area}
+```
 __'GMT'__
 ```
+
 
  column.
 
 You can still access a row using the 
 
-```python
+
+
+{:.input_area}
+```
 __iloc__
 ```
+
 
  attribute, so to get the first line in the dataframe you can simply execute:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -311,7 +455,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 london.iloc[0]
 ```
 
@@ -319,14 +468,24 @@ london.iloc[0]
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 GMT 2014-01-01 00:00:00
 Max TemperatureC 11
@@ -357,21 +516,32 @@ Name: 2014-01-01 00:00:00, dtype: object
 
 But now you can now also use the 
 
-```python
+
+
+{:.input_area}
+```
 __datetime64__
 ```
 
+
  index to get a row using the dataframe’s 
 
-```python
+
+
+{:.input_area}
+```
 __loc__
 ```
+
 
  attribute, like this:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -379,7 +549,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 london.loc[datetime(2014, 1, 1)]
 ```
 
@@ -387,14 +562,24 @@ london.loc[datetime(2014, 1, 1)]
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 GMT 2014-01-01 00:00:00
 Max TemperatureC 11
@@ -427,14 +612,22 @@ A query such as ‘Return all the rows where the date is between 8 December and 
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 london[(london['GMT'] >= datetime(2014, 12, 8))
     & (london['GMT'] <= datetime(2014, 12, 12))]
@@ -445,14 +638,22 @@ can now be done more succinctly like this:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 
 london.loc[datetime(2014,12,8) : datetime(2014,12,12)]
@@ -468,9 +669,15 @@ london.loc[datetime(2014,12,8) : datetime(2014,12,12)]
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
+
 
 
 
@@ -485,29 +692,42 @@ Because the table is in date order, we can be confident that only the rows with 
 
 
 
-```python
+
+
+{:.input_area}
+```
 london = london.sort_index()
 ```
 
 
-
 Now there is a 
 
-```python
+
+
+{:.input_area}
+```
 __datetime64__
 ```
 
+
  index, let’s plot ' 
 
-```python
+
+
+{:.input_area}
+```
 __Max Wind SpeedKm/h__
 ```
+
 
  'again:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -515,7 +735,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 london['Max Wind SpeedKm/h'].plot(grid=True, figsize=(10,5))
 
@@ -525,9 +750,15 @@ london['Max Wind SpeedKm/h'].plot(grid=True, figsize=(10,5))
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
+
 
 
 
@@ -538,9 +769,7 @@ __Figure 14__
 Chart of the values in the Max Wind SpeedKm/h column of the london dataframe. Note that the legend for the x-axis has changed from numbers to month names. 
 Now it is much clearer that the worst winds were in mid-February.
 
-
 ### Exercise 6 Changing a dataframe’s index
-
 
 #### Question
 
@@ -548,12 +777,9 @@ Now try Exercise 6 in the Exercise notebook 2.
 
 
 
-
 ## 2.2 The project
 
-
 Your project this week is to find out what would have been the best two weeks of weather for a 2014 vacation in a capital of a BRICS country.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1039.jpg)
 __Figure 15__

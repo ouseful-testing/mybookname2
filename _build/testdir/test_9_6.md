@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-9-6"
+interact_link: content/testdir/test_9_6.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_9_6'
 prev_page:
   url: /testdir/test_9_5
@@ -10,8 +13,8 @@ next_page:
   title: 'test_10_3.md'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# 4 Summary
 
+# 4 Summary
 
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1076_3d.jpg)
@@ -28,27 +31,27 @@ Next week you will learn further ways to manipulate dataframes, in particular to
 
 ---
 
-
 ### Futher reading
 [WHO population – data by country (2013)](http://apps.who.int/gho/data/node.main.POP107?lang=en)[ WHO mortality and prevalence – data by country (2007 – present) ](http://apps.who.int/gho/data/node.country)
 ---
 
-
 ## 4.1 Week 1 and 2 glossary
-
 
 Here are alphabetical lists, for quick look up, of what this week introduced.
 
 ---
 
-
 ### Programming and data analysis concepts
 
 An __assignment__ is a statement of the form 
 
-```python
+
+
+{:.input_area}
+```
 __variable = expression__
 ```
+
 
  . It evaluates the expression and stores its value in the variable. The variable is created if it doesn’t exist. Each assignment is written on its own line.
 
@@ -66,17 +69,23 @@ A __function__ takes zero or more __arguments__ (values) and __returns__ (produc
 
 A __function call__ is an expression of the form 
 
-```python
+
+
+{:.input_area}
+```
 __functionName(argument1, argument2, …).__
 ```
 
 
-
 An __import statement__ of the form 
 
-```python
+
+
+{:.input_area}
+```
 __from module import__
 ```
+
 
  * loads all the code from the given module.
 
@@ -90,10 +99,12 @@ A __method__ is a function that can only be called in a certain context, like a 
 
 A __method call__ is an expression of the form 
 
-```python
+
+
+{:.input_area}
+```
 __context.methodName(argument1, argument2, ...).__
 ```
-
 
 
 A __module__ is a package of various pieces of code that can be used individually.
@@ -120,99 +131,138 @@ A __variable__ is a named storage for values.
 
 ---
 
-
 ### Reserved words
 * 
 
-```python
+
+
+{:.input_area}
+```
 __from__
 ```
 
 
 * 
 
-```python
+
+
+{:.input_area}
+```
 __import__
 ```
 
 
-
 ---
 
 ---
-
 
 ### Functions and methods
 
 
 
-```python
+
+
+{:.input_area}
+```
 __max(value1, value2, …)__
 ```
+
 
  returns the maximum of the given values.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __column.max()__
 ```
+
 
  returns the maximum value in the column.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __min(value1, value2, …)__
 ```
+
 
  returns the minimum of the given values.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __column.min()__
 ```
+
 
  returns the minimum value in the column.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __column.mean()__
 ```
+
 
  returns the mean of the values in the column.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __column.median()__
 ```
+
 
  returns the median of the values in the column.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __column.sum()__
 ```
+
 
  returns the total of the values in the column.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __dataFrame.sort_values(columnName)__
 ```
+
 
  takes a string with a column’s name and returns a new dataframe, in which rows are sorted in ascending order according to the values in the given column.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __read_excel(fileName)__
 ```
+
 
  takes a string with an Excel file name, reads the file, and returns a dataframe representing the table in the file.
 

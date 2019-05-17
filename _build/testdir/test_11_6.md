@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-11-6"
+interact_link: content/testdir/test_11_6.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_11_6'
 prev_page:
   url: /testdir/test_11_5
@@ -10,8 +13,8 @@ next_page:
   title: 'test_11_7'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# 4 Summary
 
+# 4 Summary
 
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1052.jpg)

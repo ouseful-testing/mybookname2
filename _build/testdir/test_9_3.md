@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-9-3"
+interact_link: content/testdir/test_9_3.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_9_3.md'
 prev_page:
   url: /testdir/test_8_6
@@ -10,11 +13,10 @@ next_page:
   title: 'test_9_4'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
+
 # 1 Enter the pandas
 
-
 As you probably realised, this way of coding is not practical for large scale data analysis.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1034.jpg)
 __Figure 1__
@@ -56,14 +58,22 @@ I have to tell the computer that I’m going to use a module.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 from pandas import *
 ```
@@ -75,28 +85,44 @@ Each weekly project in this course will start with this import statement, becaus
 
 The words __
 
-```python
+
+
+{:.input_area}
+```
 from
 ```
 
+
 __ and __
 
-```python
+
+
+{:.input_area}
+```
 import
 ```
+
 
 __ are __reserved words__ : they can’t be used as variable, function or module names. Otherwise you will get a syntax error.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 from = 100
 File "<ipython-input-23-6958f0ebc10d>", line 1
@@ -108,9 +134,7 @@ SyntaxError: invalid syntax
 
 Jupyter notebooks show reserved words in boldface font to make them easier to spot. If you see a boldface name in an assignment (as you will for the code above), you must choose a different name.
 
-
 ### Exercise 5 pandas
-
 
 #### Question
 
@@ -128,7 +152,6 @@ A name error, reported as an import error
 
 The computer is expecting a name but there is no module with the name 'Pandas' in the Anaconda distribution. Remember that names are case-sensitive.
 
-
 #### Question
 
 __ 2. What kind of error will you get if you misspell 'import' as 'impart'? __
@@ -140,7 +163,6 @@ A name error only occurs when a name is undefined, but import is not a name, it�
 A syntax error
 
 The computer is expecting a reserved word and anything else will raise a syntax error.
-
 
 #### Question
 
@@ -156,12 +178,9 @@ The statement cannot end with the reserved word 'import'; the computer is expect
 
 
 
-
 ## 1.1 This week’s data
 
-
 For the next part of the course you’ll need to download a file of data.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1026.jpg)
 __Figure 2__
@@ -173,22 +192,28 @@ Open the data file WHO POP TB some.xls . The file is encoded using UTF-8, a char
 
 Put the data file in the same folder (or CoCalc project) where you saved your exercise notebook. Done? Great, let’s proceed to loading the data – you’ll learn how to do this in the next section.
 
-
 ## 1.2 Loading the data
-
 
 Many applications can read files in Excel format, and pandas can too. Asking the computer to read the data looks like this:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 data = read_excel('WHO POP TB some.xls')
 data
@@ -197,7 +222,12 @@ data
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -289,15 +319,23 @@ The variable name data is not descriptive, but as there is only one dataset in o
 
 The function 
 
-```python
+
+
+{:.input_area}
+```
 __read_excel()__
 ```
 
+
  takes a file name as an argument and returns the table contained in the file. In pandas, tables are called __dataframes__ . To load the 
 
-```python
+
+
+{:.input_area}
+```
 __data__
 ```
+
 
 , I simply call the function and store the returned dataframe in a variable.
 
@@ -307,14 +345,22 @@ Misspelling the file name, or not having the file in the same folder as the note
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 data = read_excel('WHO POP TB same.xls')
 data
@@ -384,12 +430,9 @@ Jupyter notebooks show strings in red. If you see red characters until the end o
 
 In the next section, find out how to select a column.
 
-
 ## 1.3 Selecting a column
 
-
 Now you have the data, let the analysis begin!
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1035.jpg)
 __Figure 3__
@@ -399,9 +442,13 @@ Let’s tackle the first part of the first question: ‘What are the total, smal
 
 Selecting a single column of a dataframe is done with an expression in the format: __
 
-```python
+
+
+{:.input_area}
+```
 dataFrame['column name'].
 ```
+
 
 __
 
@@ -411,7 +458,10 @@ __
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -419,7 +469,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 data['TB deaths']
 ```
 
@@ -427,14 +482,24 @@ data['TB deaths']
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 0 6900
 1 4400
@@ -456,9 +521,7 @@ Strings are verbatim text, which means that the column name must be written exac
 
 Put this learning into practice in Exercise 6.
 
-
 ### Exercise 6 selecting a column
-
 
 #### Question
 
@@ -467,34 +530,43 @@ In your Exercise notebook 1, select the population column and store it in a vari
 Remember that to open the notebook you’ll need to launch Anaconda and then navigate to the notebook using Jupyter. Once it’s open, run all the code.
 
 
-
 Next, you’ll learn about making calculations on a column.
 
-
 ## 1.4 Calculations on a column
-
 
 Having selected the column with the number of deaths per country, I’ll add them with the appropriately named sum() method to obtain the overall total deaths.
 
 A __method__ is a function that can only be called in a certain context. In this course, the context will mostly be a dataframe or a column. A __method call__ looks like a function call, but adds the context in which to call the method: 
 
-```python
+
+
+{:.input_area}
+```
 __context.methodName(argument1, argument2, ...)__
 ```
+
 
  . In other words, a dataframe method can only be called on dataframes, a column method only on columns. Because methods are functions, a method call returns a value and is therefore an expression.
 
 If all that sounded too abstract, here’s how to call the 
 
-```python
+
+
+{:.input_area}
+```
 __sum()__
 ```
+
 
  method on the TB deaths column. Note that 
 
-```python
+
+
+{:.input_area}
+```
 __sum()__
 ```
+
 
  doesn’t need any arguments because all the values are in the column.
 
@@ -504,14 +576,22 @@ __sum()__
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 tbColumn = data['TB deaths']
 tbColumn.sum()
@@ -520,7 +600,12 @@ tbColumn.sum()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -528,10 +613,14 @@ __Out[]:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 354715
 ```
-
 
 
 The estimated total number of deaths due to TB in 2013 in the BRICS and Portuguese-speaking countries was over 350 thousand. An impressive number, for the wrong reasons.
@@ -540,7 +629,10 @@ Calculating the minimum and maximum number of deaths is done in a similar way.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -548,7 +640,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 tbColumn.min()
 ```
 
@@ -556,7 +653,12 @@ tbColumn.min()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -564,7 +666,12 @@ __Out[]:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 18
 ```
 
@@ -572,7 +679,12 @@ __Out[]:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -580,7 +692,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 tbColumn.max()
 ```
 
@@ -588,7 +705,12 @@ tbColumn.max()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -596,41 +718,65 @@ __Out[]:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 240000
 ```
 
 
-
 Like 
 
-```python
+
+
+{:.input_area}
+```
 __sum()__
 ```
 
+
  , the column methods 
 
-```python
+
+
+{:.input_area}
+```
 __min()__
 ```
 
+
  and 
 
-```python
+
+
+{:.input_area}
+```
 __max()__
 ```
+
 
  don’t need arguments, whereas the Python functions 
 
-```python
+
+
+{:.input_area}
+```
 __min()__
 ```
 
+
  and 
 
-```python
+
+
+{:.input_area}
+```
 __max()__
 ```
+
 
  did need them, because there was no context (column) providing the values.
 
@@ -638,7 +784,10 @@ The average number is computed as before, dividing the total by the number of co
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -646,7 +795,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 tbColumn.sum() / 12
 ```
 
@@ -654,7 +808,12 @@ tbColumn.sum() / 12
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -662,17 +821,24 @@ __Out[]:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 29559.583333333332
 ```
-
 
 
 This kind of average is called the __mean__ and there’s a method for that.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -680,7 +846,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 tbColumn.mean()
 ```
 
@@ -688,7 +859,12 @@ tbColumn.mean()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -696,17 +872,24 @@ __Out[]:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 29559.583333333332
 ```
-
 
 
 Another kind of average measure is the __median__ , which is the number in the middle, i.e. half of the values are above the median and half below it.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -714,7 +897,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 tbColumn.median()
 ```
 
@@ -722,7 +910,12 @@ tbColumn.median()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -730,10 +923,14 @@ __Out[]:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 5650.0
 ```
-
 
 
 The mean is five times higher than the median. While half the countries had less than 5650 deaths in 2013, some countries had far more, which pushes the mean up.
@@ -742,9 +939,7 @@ The median is probably closer to the intuition you have of what ‘average’ sh
 
 Put this learning into practice in Exercise 7.
 
-
 ### Exercise 7 calculations on a column
-
 
 #### Question
 
@@ -752,9 +947,7 @@ Practise the use of column methods by applying them to the population column you
 
 
 
-
 ## 1.5 Sorting on a column
-
 
 One of the research questions was: which countries have the smallest and largest number of deaths?
 
@@ -764,7 +957,10 @@ As you’ve guessed by now, sorting a table is another single line of code.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -772,7 +968,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 data.sort_values('TB deaths')
 ```
 
@@ -780,7 +981,12 @@ data.sort_values('TB deaths')
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -870,15 +1076,22 @@ __Out[]:__
 </table>
 The dataframe method 
 
-```python
+
+
+{:.input_area}
+```
 __sort_values()__
 ```
+
 
  takes as argument a column name and returns a new dataframe where the rows are in ascending order of the values in that column. Note that sorting doesn’t modify the original dataframe.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -886,7 +1099,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 data # rows still in original order
 ```
 
@@ -894,7 +1112,12 @@ data # rows still in original order
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -986,7 +1209,10 @@ It’s also possible to sort on a column that has text instead of numbers; the r
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -994,7 +1220,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 data.sort_values('Country')
 ```
 
@@ -1002,7 +1233,12 @@ data.sort_values('Country')
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -1093,25 +1329,24 @@ __Out[]:__
 
 ### Exercise 8 sorting on a column
 
-
 #### Question
 
 Use the Exercise notebook 1 to sort the table by population so that you can quickly see which are the least and the most populous countries. Remember to run all code before doing the exercise.
 
 
-
 In the next section you’ll learn about calculations over columns.
 
-
 ## 1.6 Calculations over columns
-
 
 The last remaining task is to calculate the death rate of each country.
 
 You may recall that with the simple approach I’d have to write:
 
 
-```python
+
+
+{:.input_area}
+```
 
 
 rateAngola = deathsInAngola * 100 / populationOfAngola
@@ -1126,24 +1361,34 @@ and so on, and so on. If you’ve used spreadsheets, it’s the same process: cr
 
 
 
-```python
+
+
+{:.input_area}
+```
 rateColumn = deathsColumn * 100 / populationColumn
 ```
-
 
 
 Say no more: your wish is pandas’s command.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 deathsColumn = data['TB deaths']
 populationColumn = data['Population (1000s)']
@@ -1154,10 +1399,14 @@ rateColumn
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
-
 
 
 0 32.134873
@@ -1190,22 +1439,34 @@ Tadaaa! With pandas, the arithmetic operators become much smarter. When adding, 
 
 All well and nice, but how to put that new column into the dataframe, in order to have everything in a single table? In an assignment 
 
-```python
+
+
+{:.input_area}
+```
 __variable = expression__
 ```
+
 
  , if the variable hasn’t been mentioned before, the computer creates the variable and stores in it the expression’s value. Likewise, if I assign to a column that doesn’t exist in the dataframe, the computer will create it.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 data['TB deaths (per 100,000)'] = rateColumn
 data
@@ -1214,7 +1475,12 @@ data
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 

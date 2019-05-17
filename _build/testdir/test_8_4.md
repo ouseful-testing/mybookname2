@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-8-4"
+interact_link: content/testdir/test_8_4.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_8_4'
 prev_page:
   url: /testdir/test_8_3
@@ -10,15 +13,14 @@ next_page:
   title: 'test_8_5'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# 1 Install the software
 
+# 1 Install the software
 
 To code in the course notebooks that Ruth mentioned in the video you’ll need to install some software.
 
 We’re going use a program called Jupyter that opens in your web browser and allows you to write notebooks that include Python code. Jupyter and other software you will need to take part in the course are freely available and you have two options.
 
 ---
-
 
 ### Online CoCalc service
 
@@ -29,7 +31,6 @@ However, since notebooks are regularly auto-saved, the risk of losing work shoul
 ---
 
 ---
-
 
 ### Install Anaconda package
 
@@ -44,7 +45,6 @@ We advise you to accept the pre-filled defaults suggested during the installatio
 ---
 
 ---
-
 
 ### Notebooks
 
@@ -62,12 +62,9 @@ Note: please ensure that you abide by any terms and conditions associated with t
 
 ---
 
-
 ## 1.1 Start with a question
 
-
 Data analysis often starts with a question or with some data.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1026.jpg)
 __Figure 1__
@@ -85,9 +82,7 @@ That was enough data for the fuzzy question: how serious is TB? It was time to m
 
 Answering these questions for the whole world and for seven years (2007–2013) would be a bit too much for this initial project. A subset was needed. I decided to take only the latest data for 2013 and, being Portuguese, to focus on the Portuguese-speaking countries. One of them, Brazil, is part of the BRICS group of major emerging economies, so for more diversity the other four countries would be included too: Russia, India, China and South Africa. The project was finally defined! I’ve added links to the data below if you’d like to take a look!
 
-
 ### Activity 1 What would you ask?
-
 
 #### Question
 
@@ -98,19 +93,15 @@ What countries would you be interested in? What groups of countries might be int
 Note down some of your questions so that you can come back to them later.
 
 
-
 [WHO POPULATION - DATA BY COUNTRY (LATEST YEAR)](https://github.com/mwermelinger/Learn-to-code-for-data-analysis/raw/master/1_Having_a_go_at_it/WHO%20POP%20TB%20all.xls)
 
 [WHO TB MORTALITY AND PREVALENCE - DATA BY COUNTRY (2007 - PRESENT)](https://github.com/mwermelinger/Learn-to-code-for-data-analysis/raw/master/1_Having_a_go_at_it/WHO%20POP%20TB%20some.xls)
 
 Next, I’ll explain how I started to organise the information.
 
-
 ## 1.2 Variables and assignments
 
-
 With the choice of data and questions confirmed, the coding can begin.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1027.jpg)
 __Figure 2__
@@ -122,14 +113,21 @@ Ok, let’s start. I want the computer to calculate the total number of deaths i
 
 __
 
-```python
+
+
+{:.input_area}
+```
 In []:
 ```
+
 
 __
 
 
-```python
+
+
+{:.input_area}
+```
 
 deathsInPortugal = 100
 ```
@@ -139,21 +137,33 @@ The ‘In[]’ line is Jupyter’s way of saying that what follows is code I typ
 
 By naming the boxes, I can later ask the computer to show the value in box 
 
-```python
+
+
+{:.input_area}
+```
 __thingamajig__
 ```
 
+
  or take the values in boxes 
 
-```python
+
+
+{:.input_area}
+```
 __stuff__
 ```
 
+
  and 
 
-```python
+
+
+{:.input_area}
+```
 __moreStuff__
 ```
+
 
  and add them together.
 
@@ -161,14 +171,21 @@ To see what’s inside a box, I can just write the name of the box on a line of 
 
 __
 
-```python
+
+
+{:.input_area}
+```
 In []:
 ```
+
 
 __
 
 
-```python
+
+
+{:.input_area}
+```
 
 deathsInPortugal
 ```
@@ -176,14 +193,21 @@ deathsInPortugal
 
 __
 
-```python
+
+
+{:.input_area}
+```
 Out[]:
 ```
+
 
 __
 
 
-```python
+
+
+{:.input_area}
+```
 
 100
 ```
@@ -193,14 +217,21 @@ Each assignment is written on a line of its own. The computer executes the assig
 
 __
 
-```python
+
+
+{:.input_area}
+```
 In []:
 ```
+
 
 __
 
 
-```python
+
+
+{:.input_area}
+```
 
 deathsInPortugal = 100
 deathsInAngola = 200
@@ -214,14 +245,21 @@ By the way, all numbers so far are fictitious. If I use real data, taken from th
 
 __
 
-```python
+
+
+{:.input_area}
+```
 In []:
 ```
+
 
 __
 
 
-```python
+
+
+{:.input_area}
+```
 
 deathsInPortugal = 140
 deathsInAngola = 6900
@@ -232,14 +270,21 @@ deathsInPortugal
 
 __
 
-```python
+
+
+{:.input_area}
+```
 Out[]:
 ```
+
 
 __
 
 
-```python
+
+
+{:.input_area}
+```
 
 140
 ```
@@ -247,9 +292,13 @@ __
 
 Notice what happened. When a value is assigned to an already existing variable, the value stored in that variable is unceremoniously chucked away and replaced by the new value. In the example, the second group of assignments replaced the values assigned by the first group and thus the current value of 
 
-```python
+
+
+{:.input_area}
+```
 __deathsInPortugal__
 ```
+
 
  is 140 and no longer 100. That’s why the storage boxes are called variables: their content can vary over time.
 
@@ -257,12 +306,9 @@ To sum up, a __variable__ is a named storage for values and an __assignment__ ta
 
 In the next section, you will find out the importance of naming in Python.
 
-
 ## 1.3 The art of naming
 
-
 Python is relatively flexible about what you name your variables but rather picky about the format of names.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1028.jpg)
 __Figure 3__
@@ -270,41 +316,65 @@ __Figure 3__
  An image of blank name labels headed, 'Hello my name is' 
 I could have chosen 
 
-```python
+
+
+{:.input_area}
+```
 __ deaths_in_Brazil_in_2013, deathsBrazil,DeathsBrazil, dB __
 ```
 
+
  or even 
 
-```python
+
+
+{:.input_area}
+```
 __stuff__
 ```
+
 
  for my variables. If a box in your attic were labeled 
 
-```python
+
+
+{:.input_area}
+```
 __dB__
 ```
 
+
  or 
 
-```python
+
+
+{:.input_area}
+```
 __stuff__
 ```
+
 
  though, would you know what it contains a year later? So, although you can, it’s better not to use cryptic, general, or very long names.
 
 You can’t use spaces to separate words in a name, you can’t start a name with a digit and names are case-sensitive, i.e. 
 
-```python
+
+
+{:.input_area}
+```
 __deathsBrazil__
 ```
 
+
  and 
 
-```python
+
+
+{:.input_area}
+```
 __DeathsBrazil__
 ```
+
 
  are not the same variable. Making one of those mistakes will result in a __syntax error__ (when the computer doesn’t understand the line of code) or a __name error__ (when the computer doesn’t know of any variable with that name).
 
@@ -312,14 +382,22 @@ Let’s see some examples. (Remember that you’re not expected to write any cod
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 deaths In Portugal = 140
 File "<ipython-input-7-ded1a063fe45>", line 1
@@ -331,14 +409,24 @@ SyntaxError: invalid syntax
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 2013deathsInPortugal = 140
 File "<ipython-input-8-af085101fcfc>", line 1
@@ -350,14 +438,24 @@ SyntaxError: invalid syntax
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 deathsinPortugal
 ---------------------------------------
@@ -372,37 +470,45 @@ NameError: name ‘deathsinPortugal’ is not defined
 
 Note that Jupyter doesn’t write any 
 
-```python
+
+
+{:.input_area}
+```
 __Out[]__
 ```
+
 
  because the code is wrong and thus doesn’t generate any output.
 
 In this course, to make names shorter to help fit lines of code on small screens, we’ll use capitalisation instead of underscores to separate the different words of a name, as shown in the code so far. Such practice is called __camel case__ independently of the name having __
 
-```python
+
+
+{:.input_area}
+```
 oneHump
 ```
 
+
 __ (‘dromedary case’ just doesn’t sound good, does it?) or __
 
-```python
+
+
+{:.input_area}
+```
 moreThanTwoHumps
 ```
+
 
 __. The convention in Python is to start variable names with lower case and we’ll stick to it.
 
 In the next section, download the notebook for this week and work through the first exercise – your first line of code!
 
-
-##  1.4 Downloading the notebook and trying the first exercise 
-
+##  1.4 Downloading the notebook and trying the first exercise
 
 So far, I’ve done the coding and you’ve read along. Booooring. It’s time to use the Jupyter notebooks and work on the first exercise in the course.
 
-
 ### Exercise 1 Variables and assignments
-
 
 #### Question
 
@@ -420,25 +526,30 @@ Once you have installed the file, watch the video to learn how to work with Jupy
          ##-- ENDMEDIACONTENT
     
 
-
 If you haven’t yet installed Jupyter and Anaconda, do it now using these [instructions](http://www.open.edu/openlearn/learn-to-code-installation).
 
-
 ## 1.5 Expressions
-
 
 I’ve told the computer the deaths in Angola, Brazil and Portugal. I can now ask it to add them together to obtain the total deaths.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 deathsInAngola + deathsInBrazil + deathsInPortugal
 ```
@@ -446,14 +557,24 @@ deathsInAngola + deathsInBrazil + deathsInPortugal
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 11440
 ```
@@ -465,14 +586,22 @@ The value of an expression can of course be assigned to a variable.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 
 totalDeaths = deathsInAngola + deathsInBrazil + deathsInPortugal
@@ -486,14 +615,22 @@ To see the value, you learned that you must write the variable’s name.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 totalDeaths
 ```
@@ -501,14 +638,24 @@ totalDeaths
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 11440
 ```
@@ -520,14 +667,22 @@ I can now write an expression to compute the average number of deaths: it’s th
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 totalDeaths / 3
 ```
@@ -535,14 +690,24 @@ totalDeaths / 3
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 3813.3333333333335
 ```
@@ -550,16 +715,13 @@ __Out[]:__
 
 Python has of course all four arithmetic __operators__ : addition (+), division (/), subtraction (-) and multiplication (*). I’ll use the last two later in the week. Python follows the conventional operator precedence: multiplication and division before addition and subtraction, unless parentheses are used to change the order. For example, (3+4)/2 is 3.5 but 3+4/2 is 5.
 
-
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1030.jpg)
 __Figure 4__
 
  An image of many colourful painted skulls with different drawings and textures. 
 Now practice writing expressions and complete Exercise 2 in the notebook.
 
-
 ### Exercise 2 Expressions
-
 
 #### Question
 
@@ -570,15 +732,11 @@ If you’re using Anaconda, remember that to open the notebook you’ll need to 
 Writing code for the first time can be difficult but stick with it.
 
 
-
 In the next section, you will find out about functions.
-
 
 ## 1.6 Functions
 
-
 After the total and the average, next on my to-do list is to calculate the largest number of deaths.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1031.jpg)
 __Figure 5__
@@ -588,14 +746,22 @@ This will be the __maximum__. It takes another single line of code to calculate 
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 
 max(deathsInAngola, deathsInBrazil, deathsInPortugal)
@@ -605,14 +771,24 @@ max(deathsInAngola, deathsInBrazil, deathsInPortugal)
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 6900
 ```
@@ -620,40 +796,64 @@ __Out[]:__
 
 In this expression, __
 
-```python
+
+
+{:.input_area}
+```
 max()
 ```
+
 
 __ is a function – the parenthesis are a reminder that the name __
 
-```python
+
+
+{:.input_area}
+```
 max
 ```
 
+
 __ doesn’t refer to a variable. A __function__ is a piece of code that calculates ( __returns__ ) a value, given zero or more values (the function’s __arguments__ ). In this case, __
 
-```python
+
+
+{:.input_area}
+```
 max()
 ```
+
 
 __ has three arguments and returns the greatest of them. Actually, __
 
-```python
+
+
+{:.input_area}
+```
 max()
 ```
+
 
 __ can calculate the maximum of two, three, four or more values.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 max(deathsInBrazil, deathsInPortugal)
 ```
@@ -661,14 +861,24 @@ max(deathsInBrazil, deathsInPortugal)
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 4400
 ```
@@ -676,9 +886,13 @@ __Out[]:__
 
 The expressions above are function __calls__. I’m calling the __
 
-```python
+
+
+{:.input_area}
+```
 max()
 ```
+
 
 __ function with three or two arguments, and the value of the expression is the value returned by the function. A function is called by writing its name, followed by the arguments, within parentheses and separated by commas. Function names follow the same rules as variable names.
 
@@ -686,14 +900,22 @@ As you might expect, Python also has a function to calculate the smallest (minim
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 
 min(deathsInAngola, deathsInBrazil, deathsInPortugal)
@@ -703,14 +925,24 @@ min(deathsInAngola, deathsInBrazil, deathsInPortugal)
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 140
 ```
@@ -720,14 +952,22 @@ The value returned by a function call can be assigned to a variable. Here is an 
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 
 largest = max(deathsInAngola, deathsInBrazil, deathsInPortugal)
@@ -742,24 +982,32 @@ range
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 6760
 ```
 
 
-
 ### Exercise 3 Functions
 
 Identify different types of error (some of you may have experienced those already…) in Exercise 3. You’ll need to use the Week 1 notebook to answer question three.
-
 
 #### Question
 
@@ -769,15 +1017,23 @@ A syntax error
 
 Writing 
 
-```python
+
+
+{:.input_area}
+```
 Min(…, …)
 ```
 
+
  instead of 
 
-```python
+
+
+{:.input_area}
+```
 min(…, …)
 ```
+
 
  is not a syntax error, because both have the form of a function call. Names can use uppercase letters.
 
@@ -787,14 +1043,17 @@ A name error
 
 The computer will understand than 
 
-```python
+
+
+{:.input_area}
+```
 Min(…, …)
 ```
+
 
  is a function call but doesn’t know of any function with that name. Remember that names are case-sensitive.
 
 Take a look at <a xmlns:str="http://exslt.org/strings" href="">The art of naming</a>.
-
 
 #### Question
 
@@ -811,7 +1070,6 @@ A syntax error
 A function call requires two parentheses around the arguments, and one comma between successive arguments. Forgetting any of them therefore deviates from the syntax of the Python language.
 
 Take a look at <a xmlns:str="http://exslt.org/strings" href="">Functions</a>.
-
 
 #### Question
 
@@ -849,31 +1107,35 @@ The range is the maximum value (240 thousand for India) minus the minimum value 
 
 
 
-
 ## 1.7 Comments
 
-
 Last on my to-do list is the death rate, which is the number of deaths divided by the population.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1032.jpg)
 __Figure 6__
 
 An image of different speech bubbles being held up
 
-
 A quick glance at the WHO website tells me Portugal’s population in 2013.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 populationOfPortugal = 10608
 ```
@@ -883,14 +1145,22 @@ Wait a minute! This can’t be right. I know Portugal isn’t a large country, b
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 populationOfPortugal = 10608000
 ```
@@ -902,14 +1172,22 @@ I will therefore keep the original assignment but make a note of the unit, using
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 # population unit: thousands of inhabitants
 populationOfPortugal = 10608
@@ -924,14 +1202,22 @@ I can now compute the death rate, making sure I first convert the population int
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 deathsInPortugal / (populationOfPortugal * 1000)
 ```
@@ -939,14 +1225,24 @@ deathsInPortugal / (populationOfPortugal * 1000)
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 1.3197586726998491e-05
 ```
@@ -956,14 +1252,22 @@ The death rate (roughly 140 people in 10 million) is a very small number, not ve
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 # death rate: deaths per 100 thousand inhabitants
 deathsInPortugal * 100 / populationOfPortugal
@@ -972,14 +1276,24 @@ deathsInPortugal * 100 / populationOfPortugal
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 1.3197586726998491
 ```
@@ -989,9 +1303,7 @@ This finishes the basics of coding needed for this week. It took less than 30 li
 
 Test this out for yourself in Exercise 4 of the Week 1 exercise notebook.
 
-
 ### Exercise 4 Comments
-
 
 #### Question
 
@@ -1001,12 +1313,9 @@ Remember that once the notebook is open, run all the code, before doing the exer
 
 
 
-
 ## 1.8 Values have units
 
-
 Before I move on, let me explain the importance of using comments to record units of measurement.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1033.jpg)
 __Figure 7__
@@ -1014,9 +1323,7 @@ __Figure 7__
 An image of four towers of liquorish allsorts
 Values are not just numbers, they have units: degrees Celsius, number of inhabitants, thousands of gallons, etc. Always make a note of the units the value refers to, using comments. This makes it easier to check whether the expressions are right. Disregarding the units will lead to wrong calculations and results.
 
-
 ### Activity 2
-
 
 #### Question
 

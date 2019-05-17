@@ -2,7 +2,7 @@
 redirect_from:
   - "/testdir/test-10-3"
 interact_link: content/testdir/test_10_3.ipynb
-kernel_name: python3
+kernel_name: 
 has_widgets: false
 title: 'test_10_3.md'
 prev_page:

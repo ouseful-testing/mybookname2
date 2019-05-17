@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-13-3"
+interact_link: content/testdir/test_13_3.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_13_3.md'
 prev_page:
   url: /testdir/test_12_6
@@ -10,14 +13,17 @@ next_page:
   title: 'test_13_4'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# 1 Joining left, right and centre
 
+# 1 Joining left, right and centre
 
 Let’s take stock for a moment. There’s the original, unchanged table (with full country names) about the life expectancy:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -25,7 +31,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 life
 ```
 
@@ -33,7 +44,12 @@ life
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -77,7 +93,10 @@ __Out[]:__
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -85,7 +104,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 gdp
 ```
 
@@ -93,7 +117,12 @@ gdp
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -135,23 +164,34 @@ __Out[]:__
 </table>
 Both tables have a common column with a common name (‘Country name’). I can __join__ the two tables on that common column, using the 
 
-```python
+
+
+{:.input_area}
+```
 __merge()__
 ```
+
 
  function. Merging basically puts all columns of the two tables together, without duplicating the common column, and joins any rows that have the same value in the common column.
 
 There are four possible ways of joining, depending on which rows I want to include in the resulting table. If I want to include only those countries appearing in the GDP table, I call the 
 
-```python
+
+
+{:.input_area}
+```
 __merge()__
 ```
+
 
  function like so:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -159,7 +199,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 merge(gdp, life, on='Country name', how='left')
 ```
 
@@ -167,7 +212,12 @@ merge(gdp, life, on='Country name', how='left')
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -215,15 +265,23 @@ __Out[]:__
 </table>
 The first two arguments are the tables to be merged, with the first table being called the ‘left’ table and the second being the ‘right’ table. The 
 
-```python
+
+
+{:.input_area}
+```
 __on__
 ```
 
+
  argument is the name of the common column, i.e. both tables must have a column with that name. The 
 
-```python
+
+
+{:.input_area}
+```
 __how__
 ```
+
 
  argument states I want a __left join__ , i.e. the resulting rows are dictated by the left (GDP) table. You can easily see that India and Russia, which appear only in the right (expectancy) table, don’t show up in the result. You can also see that Brazil and South Africa, which appear only in the left table, have an undefined life expectancy. (Remember that ‘NaN’ stands for ‘not a number.)
 
@@ -231,7 +289,10 @@ A __right join__ will instead take the rows from the right table, and add the co
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -239,7 +300,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 merge(gdp, life, on='Country name', how='right')
 ```
 
@@ -247,7 +313,12 @@ merge(gdp, life, on='Country name', how='right')
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -297,7 +368,10 @@ The third possibility is an __outer join__ which takes all countries, i.e. wheth
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -305,7 +379,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 merge(gdp, life, on='Country name', how='outer')
 ```
 
@@ -313,7 +392,12 @@ merge(gdp, life, on='Country name', how='outer')
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -375,7 +459,10 @@ The last possibility is an __inner join__ which takes only those countries commo
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -383,7 +470,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 gdpVsLife = merge(gdp, life, on='Country name', how='inner')
 
@@ -393,7 +485,12 @@ gdpVsLife = merge(gdp, life, on='Country name', how='inner')
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -429,9 +526,7 @@ __Out[]:__
 </table>
 Now it’s just a matter of applying the data transformation and combination techniques seen so far to the real data from the World Bank.
 
-
 ### Exercise 5 Joining left, right and centre
-
 
 #### Question
 
@@ -441,14 +536,11 @@ Remember to run the existing code in the notebook before you start the exercise.
 
 
 
-
 ## 1.1 Constant variables
-
 
 You may have noticed that the same column names appear over and over in the code.
 
 If, someday, I decide one of the new columns should be called ‘GDP (million GBP)’ instead of ‘GDP (£m)’ to make clear which currency is meant (because various countries use the pound symbol), I need to change the string in every line of code it occurs.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1053.jpg)
 __Figure 1__
@@ -458,14 +550,22 @@ Laziness is the mother of invention. If I assign the string to a variable and th
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 gdpInGbp = 'GDP (million GBP)'
 gdpInUsd = 'GDP (US$)'
@@ -480,14 +580,22 @@ Such variables are meant to be assigned once. They are called __constants__ , be
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 GDP_GBP = 'GDP (million GBP)'
 GDP_USD = 'GDP (US$)'
@@ -508,9 +616,7 @@ To sum up, using constants makes the code clearer, easier to change, and less pr
 
 Any value can be defined as a constant, whether it’s a string, a number or even a dataframe. For example, you could store the data you have loaded from the file into a constant, as a reminder to not change the original data. In the rest of the week, I’ll use constants mainly for the column names.
 
-
 ### Exercise 6 Constants
-
 
 #### Question
 
@@ -518,9 +624,7 @@ To practise using constants, rewrite your exercises in the Exercise notebook 3 u
 
 
 
-
 ## 1.2 Getting real
-
 
 Having tried out the data transformations and combination on small tables, I feel confident about using the full data from the World Bank, which I pointed you to in Life expectancy project.
 
@@ -528,15 +632,23 @@ Open a new browser window and go to the World Bank’s [data page](http://data.w
 
 Knowing the indicator name, it’s a doddle to get the data directly into a dataframe, by using the 
 
-```python
+
+
+{:.input_area}
+```
 __download()__
 ```
 
+
  function of the 
 
-```python
+
+
+{:.input_area}
+```
 __wb__
 ```
+
 
  (World Bank) module, instead of first downloading a CSV or Excel file and then loading it into a dataframe. (Note that CoCalc’s free plan doesn’t allow connecting to other sites, so if you are using CoCalc you’ll need to download the data as a CSV or Excel file from the World Bank and upload it to CoCalc.)
 
@@ -544,14 +656,22 @@ Here’s the code to get the 2013 GDP values for all countries. It may take a li
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 from pandas.io.wb import download 
 YEAR = 2013
@@ -564,7 +684,12 @@ data.head()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -611,22 +736,34 @@ __Out[]:__
 </table>
 This table definitely has an odd shape. The three columns don’t have their headings side by side, and the row numbering (0, 1, 2, etc) is missing. That’s because the first two ‘columns’ are in fact the dataframe index. You saw a similar table in Changing a dataframe’s index , when the index of the weather dataframe was set to be the ‘GMT’ column, with values of type 
 
-```python
+
+
+{:.input_area}
+```
 __datetime64__
 ```
+
 
 . There’s a dataframe method to do the inverse, i.e. to transform the row names into column values and thereby reinstate the default dataframe index.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 gdp = data.reset_index()
 gdp.head()
@@ -635,7 +772,12 @@ gdp.head()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -690,14 +832,22 @@ I repeat the whole process for the life expectancy:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 LIFE_INDICATOR = 'SP.DYN.LE00.IN'
 data = download(indicator=LIFE_INDICATOR, country='all',
@@ -709,7 +859,12 @@ life.head()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -757,9 +912,7 @@ __Out[]:__
 </table>
 By defining the year as a constant, it’s very quick to change the code to load both datasets for any other year. If you wish to get GDP data for an earlier year than for life expectancy, then you need to define a second constant.
 
-
 ### Exercise 7 Getting real
-
 
 #### Question
 
@@ -769,65 +922,98 @@ Therefore, the Exercise notebook 3 loads instead the GDP and life expectancy dat
 
 
 
-
 ## 1.3 Cleaning up
-
 
 You may have noticed that the initial rows are not about countries, but groups of countries. Such aggregated values need to be removed, because we’re only interested in individual countries.
 
 The expression 
 
-```python
+
+
+{:.input_area}
+```
 __frame[m:n],__
 ```
 
+
  with 
 
-```python
+
+
+{:.input_area}
+```
 __n__
 ```
+
 
  an integer bigger than 
 
-```python
+
+
+{:.input_area}
+```
 __m__
 ```
+
 
  , represents the ‘sub-table’ from row 
 
-```python
+
+
+{:.input_area}
+```
 __m__
 ```
+
 
  to row 
 
-```python
+
+
+{:.input_area}
+```
 __n-1__
 ```
 
+
 . In other words, it is a slice of frame with exactly 
 
-```python
+
+
+{:.input_area}
+```
 __n__
 ```
 
+
  minus 
 
-```python
+
+
+{:.input_area}
+```
 __m__
 ```
 
+
  rows. The expression is equivalent to the more convoluted expression 
 
-```python
+
+
+{:.input_area}
+```
 __frame.head(n).tail(n-m)__
 ```
+
 
 .
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -835,7 +1021,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 gdp[0:3]
 ```
 
@@ -843,7 +1034,12 @@ gdp[0:3]
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -879,21 +1075,32 @@ __Out[]:__
 </table>
 To slice all rows from 
 
-```python
+
+
+{:.input_area}
+```
 __m__
 ```
 
+
  onwards, you don’t have to count how many rows there are beforehand, just omit 
 
-```python
+
+
+{:.input_area}
+```
 __n__
 ```
+
 
 .
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -901,7 +1108,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 gdp[240:]
 ```
 
@@ -909,7 +1121,12 @@ gdp[240:]
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -981,28 +1198,44 @@ __Out[]:__
 </table>
 By trying out 
 
-```python
+
+
+{:.input_area}
+```
 __head(m)__
 ```
 
+
  for different values of 
 
-```python
+
+
+{:.input_area}
+```
 __m__
 ```
+
 
  , I find that the list of individual countries starts in row number 34, with Afghanistan. Hence, I slice from row 34 onwards, and that’s my new dataframe.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 gdp = gdp[34:]
 gdp.head()
@@ -1011,7 +1244,12 @@ gdp.head()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -1061,14 +1299,22 @@ Unsurprisingly, there is missing data, so I remove those rows, as shown in Missi
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 gdp = gdp.dropna()
 gdp.head()
@@ -1077,7 +1323,12 @@ gdp.head()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -1127,14 +1378,22 @@ Finally, I drop the irrelevant year column.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 COUNTRY = 'country'
 headings = [COUNTRY, GDP_INDICATOR]
@@ -1145,7 +1404,12 @@ gdp.head()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -1189,14 +1453,22 @@ And now I repeat the whole cleaning process for the life expectancy table.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 headings = [COUNTRY, LIFE_INDICATOR]
 life = life[34:].dropna()[headings]
@@ -1206,7 +1478,12 @@ life.head()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -1248,9 +1525,7 @@ __Out[]:__
 </table>
 Note how a single line of code can chain a row slice, a method call and a column slice, because each takes a dataframe and returns a dataframe.
 
-
 ### Exercise 8 Cleaning up
-
 
 #### Question
 
@@ -1258,12 +1533,9 @@ Clean up the population data from Exercise 7, in Exercise 8 in the exercise note
 
 
 
-
 ## 1.4 Joining and transforming
 
-
 With the little tables, I first transformed the columns and then joined the tables.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1054.jpg)
 __Figure 2__
@@ -1273,7 +1545,10 @@ As you may be starting to realise, there’s often more than one way to do it. J
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -1281,7 +1556,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 life.head()
 ```
 
@@ -1289,7 +1569,12 @@ life.head()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -1331,7 +1616,10 @@ __Out[]:__
 </table>
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -1339,7 +1627,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 gdp.head()
 ```
 
@@ -1347,7 +1640,12 @@ gdp.head()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -1391,14 +1689,22 @@ First, an inner join on the common column to combine rows where the common colum
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 
 gdpVsLife = merge(gdp, life, on='country', how='inner')
@@ -1409,7 +1715,12 @@ gdpVsLife.head()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out []:__
 ```
 
@@ -1459,14 +1770,22 @@ Second, the dollars are converted to millions of pounds.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 GDP = 'GDP (£m)'
 column = gdpVsLife[GDP_INDICATOR]
@@ -1479,7 +1798,12 @@ gdpVsLife.head()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -1535,14 +1859,22 @@ Third, the life expectancy is rounded to the nearest integer, with a by now fami
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 LIFE = 'Life expectancy (years)'
 
@@ -1554,7 +1886,12 @@ gdpVsLife.head()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -1616,14 +1953,22 @@ Lastly, the original columns are discarded.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 headings = [COUNTRY, GDP, LIFE]
 gdpVsLife = gdpVsLife[headings]
@@ -1633,7 +1978,12 @@ gdpVsLife.head()
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -1681,9 +2031,7 @@ __Out[]:__
 </table>
 For the first five countries there doesn’t seem to be any relation between wealth and life expectancy, but that might be just for those countries.
 
-
 ### Exercise 9 Joining and transforming
-
 
 #### Question
 

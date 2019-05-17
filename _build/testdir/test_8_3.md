@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-8-3"
+interact_link: content/testdir/test_8_3.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_8_3.md'
 prev_page:
   url: /testdir/test_7_5
@@ -10,8 +13,8 @@ next_page:
   title: 'test_8_4'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# Introduction
 
+# Introduction
 
 Welcome to *Learn to code for data analysis*! This course has been written to show how a little bit of code can go a long way in making sense of the increasingly vast amounts of open data available online.
 
@@ -26,7 +29,6 @@ Hello. I'm Ruth Alexander a journalist with the BBC. I work on the Radio 4 progr
 The week will end with a quiz to help you consolidate your learning. Programming requires practise so do have a go at all the exercises and quiz questions and get involved in the discussions. We'll also suggest ways for you to extend each week's project if you have the time. As you'll see if we put the data into the right sort of format a single line of code can do a lot of work with it. The few and short lines of code you'll be writing over the coming weeks employ exactly the same principles used in software developed for any purpose be it games or online shopping.
 
 This week you'll learn some of those general programming principles, how to apply them to data analysis and how to use and share notebooks. Enjoy.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_vid_1001.jpg)
 

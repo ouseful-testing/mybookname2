@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-8-6"
+interact_link: content/testdir/test_8_6.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_8_6'
 prev_page:
   url: /testdir/test_8_5
@@ -10,8 +13,8 @@ next_page:
   title: 'test_9_3.md'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# 3 Summary
 
+# 3 Summary
 
 The first week of this course covered:
 * installing software in course notebooksinstalling software in course notebooks

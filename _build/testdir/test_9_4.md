@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-9-4"
+interact_link: content/testdir/test_9_4.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_9_4'
 prev_page:
   url: /testdir/test_9_3
@@ -10,8 +13,8 @@ next_page:
   title: 'test_9_5'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# 2 Writing up the analysis
 
+# 2 Writing up the analysis
 
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1070.jpg)
@@ -33,9 +36,7 @@ You can see how I’ve written up the analysis by opening this week’s project 
 
 In the next section, amend this project to produce your own version.
 
-
 ## 2.1 Practice project
-
 
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1036.jpg)
@@ -44,9 +45,7 @@ __Figure 5__
  An image of many pins marking various countries on a globe. 
 Here’s a quick project for you, which is about looking at TB deaths in *all* countries.
 
-
 ### Activity 1 The project
-
 
 #### Question
 1. Open the data file WHO POP TB all.xls . DoOpen the data file WHO POP TB all.xls . Do __not__ open or edit this file, to avoid changing its encoding. If you want to see the contents of the file, make a copy and look at the copy.
@@ -66,9 +65,7 @@ You might like to share your experience of working on this project with friends,
 
 
 
-
 ## 2.2 Sharing your project notebook
-
 
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1037.jpg)

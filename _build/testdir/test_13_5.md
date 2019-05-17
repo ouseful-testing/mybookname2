@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-13-5"
+interact_link: content/testdir/test_13_5.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_13_5'
 prev_page:
   url: /testdir/test_13_4
@@ -10,8 +13,8 @@ next_page:
   title: 'test_13_6'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# 3 This week’s quiz
 
+# 3 This week’s quiz
 
 Check what you’ve learned this week by taking the end-of-week quiz.
 

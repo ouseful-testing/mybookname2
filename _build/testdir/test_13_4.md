@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-13-4"
+interact_link: content/testdir/test_13_4.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_13_4'
 prev_page:
   url: /testdir/test_13_3
@@ -10,11 +13,10 @@ next_page:
   title: 'test_13_5'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
+
 # 2 Correlation
 
-
 To see if life expectancy grows when the GDP increases I will use a statistical measure known as the __Spearman rank correlation coefficient__.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1055.jpg)
 __Figure 3__
@@ -31,36 +33,56 @@ The __p-value__ indicates how significant the result is, in a particular technic
 
 The pandas module doesn’t calculate complex statistics. There are other modules in the Anaconda distribution for that. In particular, 
 
-```python
+
+
+{:.input_area}
+```
 __scipy__
 ```
 
+
  (Scientific Python) has a stats module that provides the 
 
-```python
+
+
+{:.input_area}
+```
 __spearmanr()__
 ```
+
 
  function. The function takes as arguments the two columns of data to correlate. Contrary to the functions you’ve seen so far, it returns two values instead of one: the correlation and the p-value. To store both values, simply use a pair of variables, written in parenthesis.
 
 To show the results in a nicer way, I will use the Python 
 
-```python
+
+
+{:.input_area}
+```
 __print()__
 ```
+
 
  function, which displays its arguments in a single line.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 from scipy.stats import spearmanr 
 gdpColumn = gdpVsLife[GDP]
@@ -76,14 +98,24 @@ else:
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 The correlation is 0.493179132478.
 It is statistically significant.
@@ -94,9 +126,7 @@ Although there is a statistically significant direct correlation (life expectanc
 
 A perfect (direct or inverse) correlation doesn’t mean there is any cause-effect between the two indicators. A perfect direct correlation between life expectancy and GDP would only state that the higher the GDP, the higher the life expectancy. It would not state that the higher expectancy is due to the GDP. Correlation is not causation.
 
-
 ### Exercise 10 Correlation
-
 
 #### Question
 
@@ -106,9 +136,7 @@ Remember to run the existing code in the notebook before you start the exercise.
 
 
 
-
 ## 2.1 Scatterplots
-
 
 Statistics can be misleading. A coefficient of zero only states there is no ranking relation between the indicators, but there might be some other relationship.
 
@@ -116,14 +144,22 @@ In the next example, the correlation between x and y is zero, but they are clear
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 table = [ [-2,4], [-1,1], [0,0], [1,1], [2,4] ]
 data = DataFrame(columns=['x', 'y'], data=table)
@@ -137,7 +173,12 @@ data
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -145,7 +186,12 @@ __Out[]:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 The correlation is 0.0
 ```
 
@@ -189,14 +235,22 @@ It’s therefore best to complement the quantitative analysis with a more qualit
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 %matplotlib inline
 
@@ -207,7 +261,12 @@ gdpVsLife.plot(x=GDP, y=LIFE, kind='scatter', grid=True)
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -215,7 +274,12 @@ __Out[]:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 &lt;matplotlib.axes._subplots.AxesSubplot at 0x10e2e6eb8&gt;
 
@@ -224,40 +288,60 @@ __Out[]:__
 
 
 
+
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1018.jpg)
 __Figure 4__
 
-
 This graph is not very useful. The GDP difference between the poorest and richest countries is so vast that the whole chart is squashed to fit all GDP values on the x-axis. It is best to use a __logarithmic scale__ , where the axis values don’t increase by a constant interval (10, 20, 30, for example), but by a multiplicative factor (10, 100, 1000, 10000, etc.). The parameter 
 
-```python
+
+
+{:.input_area}
+```
 __logx__
 ```
 
+
  has to be set to 
 
-```python
+
+
+{:.input_area}
+```
 __True__
 ```
 
+
  to get a logarithmic scale on the x-axis. Moreover, let’s make the chart a bit wider, by using the 
 
-```python
+
+
+{:.input_area}
+```
 __figsize__
 ```
+
 
  parameter you saw last week.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 gdpVsLife.plot(x=GDP, y=LIFE, kind='scatter', grid=True, 
               logx=True, figsize = (10, 4))
@@ -266,7 +350,12 @@ gdpVsLife.plot(x=GDP, y=LIFE, kind='scatter', grid=True,
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -274,7 +363,12 @@ __Out[]:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 &gt;matplotlib.axes._subplots.AxesSubplot at 0x10e400588&gt;
 
@@ -283,17 +377,15 @@ __Out[]:__
 
 
 
+
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1019.jpg)
 __Figure 5__
-
 
 The major tick marks in the x-axis go from 10 2 (that’s a one followed by two zeros, hence 100) to 10 8 (that’s a one followed by eight zeros, hence 100,000,000) million pounds, with the minor ticks marking the numbers in between. For example, the eight minor ticks between 10 2 and 10 3 represent the values 200 (2 × 10 2 ), 300 (3 × 10 2 ), and so on until 900 (9 × 10 2 ). As a further example, the country with the lowest life expectancy is on the second minor tick to the right of 10 3 , which means its GDP is about 3 × 10 3 (three thousand) million pounds.
 
 Countries with a GDP around 10 thousand (10 4 ) millions of pounds have a wide range of life expectancies, from under 50 to over 80, but the range tends to shrink both for poorer and for richer countries. Countries with the lowest life expectancy are neither the poorest nor the richest, but those with highest expectancy are among the richer countries.
 
-
 ### Exercise 11 Scatterplots
-
 
 #### Question
 
@@ -301,12 +393,9 @@ Practise using Scatterplots in Exercise11 in the Exercise notebook 3.
 
 
 
-
 ## 2.2 My project
 
-
 I’ve written up my analysis of this week’s project in the notebook you can open this in your downloaded files.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1056.jpg)
 __Figure 6__
@@ -317,7 +406,6 @@ The structure is very simple: besides the introduction and the conclusions, ther
 Open Project 4: Life expectancy
 
 If you have time, extend my project to answer different questions or create your own project in the activity below.
-
 
 ### Activity 1
 <h1 xmlns:str="http://exslt.org/strings">Extend the project</h1>

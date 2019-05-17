@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-13-6"
+interact_link: content/testdir/test_13_6.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_13_6'
 prev_page:
   url: /testdir/test_13_5
@@ -10,8 +13,8 @@ next_page:
   title: 'test_14_3.md'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# 4 Summary 
 
+# 4 Summary
 
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1058.jpg)
@@ -25,21 +28,21 @@ This week you transformed and combined databy:
 
 Next week you'll learn how to group, export and import data to generate pivot table style reports.
 
-
 ## 4.1 Weeks 5 and 6 glossary
-
 
 Here are alphabetical lists, for quick look up, of what this week introduced.
 
 ---
-
 
 ### Concepts
 
 A __conditional statement__ is of the form
 
 
-```python
+
+
+{:.input_area}
+```
 
 if condition1:
      statements1
@@ -53,21 +56,33 @@ else:
 
 The computer evaluates the conditions from top to bottom and executes *only* the statements for the *first* condition that is true. If all conditions are false, it executes the 
 
-```python
+
+
+{:.input_area}
+```
 __else__
 ```
+
 
  statements. If there is no 
 
-```python
+
+
+{:.input_area}
+```
 __else__
 ```
 
+
  part nothing happens. The 
 
-```python
+
+
+{:.input_area}
+```
 __elif__
 ```
+
 
  parts are optional too. Each block of statements must be indented, usually by four spaces.
 
@@ -76,7 +91,10 @@ A __constant__ is a variable that is assigned only once, i.e. its initial value 
 A __function definition__ is typically of the form
 
 
-```python
+
+
+{:.input_area}
+```
 
 
 def functionName (argumentName1, argumentName2,...):
@@ -94,9 +112,13 @@ In a __logarithmic scale__ , each major tick represents a value that is the mult
 
 A __method chain__ is an expression like 
 
-```python
+
+
+{:.input_area}
+```
 __ context.method1(args1).method2(args2).method3(args3) __
 ```
+
 
  where each method has and returns the same type of context, except possibly the last method, which can return any type of value.
 
@@ -104,9 +126,13 @@ The __p-value__ is an indication of the significance of the result. Usually a p-
 
 A __return statement__ is of the form 
 
-```python
+
+
+{:.input_area}
+```
 __return expression__
 ```
+
 
  and passes the value of the expression back to the code that called the function to which the return statement belongs.
 
@@ -118,20 +144,27 @@ A __test__ is some code that checks whether some other code works as expected, e
 
 ---
 
-
 ### Reserved Words
 
 
 
-```python
+
+
+{:.input_area}
+```
 __def, elif, else,__
 ```
 
+
  if and 
 
-```python
+
+
+{:.input_area}
+```
 __return__
 ```
+
 
  cannot be used as names.
 
@@ -139,60 +172,90 @@ __return__
 
 ---
 
-
 ### Functions and methods
 
 
 
-```python
+
+
+{:.input_area}
+```
 __col.apply(functionName)__
 ```
 
+
  returns a new column, obtained by applying the given one-argument function to each cell in column 
 
-```python
+
+
+{:.input_area}
+```
 __col__
 ```
+
 
 .
 
 
 
-```python
+
+
+{:.input_area}
+```
 __DataFrame(columns=listOfStrings, data=listOfLists)__
 ```
+
 
  returns a new dataframe, given the data as a list of rows, each row being a list of values in column order.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __ download(indicator=string, country='all', start=number, end=number) __
 ```
+
 
  is a function in the pandas.io.wb module that downloads the World Bank data for the given indicator and all countries and country groups from the given start year to the given end year.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __ merge(left=frame1, right=frame2, on=columnName, how=string) __
 ```
 
+
  returns a new dataframe, obtained by joining the two frames on the columns with the given common name. The 
 
-```python
+
+
+{:.input_area}
+```
 __how__
 ```
 
+
  argument can be one of 
 
-```python
+
+
+{:.input_area}
+```
 __‘left’, ‘right’, ‘inner’__
 ```
 
+
  and 
 
-```python
+
+
+{:.input_area}
+```
 __'outer’.__
 ```
 
@@ -200,25 +263,39 @@ __'outer’.__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __print()__
 ```
+
 
  is a Python function that takes one or more expressions and prints their values on the screen in a single line.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __frame.reset_index()__
 ```
+
 
  returns a new dataframe in which rows are labelled from 0 onwards.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __spearmanr()__
 ```
+
 
  is a function in the scipy.stats module that takes two columns and returns a pair of numbers: the Spearman rank correlation coefficient of the two series of values, and its p-value.
 

@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-12-3"
+interact_link: content/testdir/test_12_3.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_12_3.md'
 prev_page:
   url: /testdir/test_11_7
@@ -10,8 +13,8 @@ next_page:
   title: 'test_12_4'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# Introduction
 
+# Introduction
 
 Welcome to Week 5.
 

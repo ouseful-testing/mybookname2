@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-7-3"
+interact_link: content/testdir/test_7_3.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_7_3.md'
 prev_page:
   url: https://github.com/ouseful-testing/mybookname2
@@ -10,8 +13,8 @@ next_page:
   title: 'test_7_4'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# Introduction and guidance
 
+# Introduction and guidance
 
 Welcome to this badged open course, *Learn to code for data analysis*.
 
@@ -26,7 +29,6 @@ After completing this course, you should be able to:
 * write simple programs to analyse large bodies of data and produce useful results.write simple programs to analyse large bodies of data and produce useful results.
 
 ---
-
 
 ### Moving around the course
 

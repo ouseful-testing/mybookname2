@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-14-6"
+interact_link: content/testdir/test_14_6.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_14_6'
 prev_page:
   url: /testdir/test_14_5
@@ -10,8 +13,8 @@ next_page:
   title: 'test_15_3.md'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-# 3 Summary
 
+# 3 Summary
 
 This week you’ve learned how to take a dataset that contains multiple possible groupings, or subsets of data, and work with those groups to perform a variety of transformations. You’ve explored:
 * ways of grouping dataways of grouping data

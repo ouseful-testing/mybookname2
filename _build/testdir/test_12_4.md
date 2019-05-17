@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test-12-4"
+interact_link: content/testdir/test_12_4.ipynb
+kernel_name: 
+has_widgets: false
 title: 'test_12_4'
 prev_page:
   url: /testdir/test_12_3
@@ -10,11 +13,10 @@ next_page:
   title: 'test_12_5'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
+
 # 1 Life expectancy project
 
-
 This week I wish to see (literally, via a chart) if the life expectancy in richer countries tends to be longer.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1047.jpg)
 __Figure 1__
@@ -36,16 +38,13 @@ I’m aware that the GDP is a crude way of comparing wealth across nations. For 
 
 ---
 
-
 ### Links:
 * [GDP in current US dollars](http://data.worldbank.org/indicator/NY.GDP.MKTP.CD)
 * [Life expectancy at birth](http://data.worldbank.org/indicator/SP.DYN.LE00.IN)
 
 ---
 
-
 ## 1.1 Creating the data
-
 
 I won’t yet work with the full data. Instead I will create small tables, to better illustrate this week’s concepts and techniques.
 
@@ -59,14 +58,22 @@ Here is a table of the 2013 GDP of some countries, in US dollars:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 table = [
 ['UK', 2678454886796.7], # 1st row
@@ -80,22 +87,34 @@ table = [
 
 To create a dataframe, I use a pandas function appropriately called 
 
-```python
+
+
+{:.input_area}
+```
 __DataFrame()__
 ```
+
 
 . I have to give it two arguments: the names of the columns and the data itself. The column names are given as a list of strings, the first string being the first column name, etc.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 headings = ['Country', 'GDP (US$)']
 gdp = DataFrame(columns=headings, data=table)
@@ -105,7 +124,12 @@ gdp
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -151,14 +175,22 @@ I define a similar table for the life expectancy, based on the 2013 World Bank d
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 
 headings = ['Country name', 'Life expectancy (years)']
@@ -177,7 +209,12 @@ life
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -219,9 +256,7 @@ __Out[]:__
 </table>
 To illustrate potential issues when combining multiple datasets, I’ve taken a different set of countries, with common countries in a different order. Moreover, to illustrate a non-numeric conversion, I’ve abbreviated country names in one table but not the other.
 
-
 ### Exercise 1 Creating the data
-
 
 #### Question
 
@@ -231,16 +266,12 @@ If you’re using Anaconda, remember that to open the notebook you’ll need to 
 
 
 
-
 ## 1.2 Defining functions
-
 
 To make the GDP values easier to read, I wish to convert US dollars to millions of US dollars.
 
-
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1048.jpg)
 __Figure 2__
-
 
 I have to be precise about what I mean. For example, if the GDP is 4,567,890.1 (using commas to separate the thousands, millions, etc.), what do I want to obtain? Do I want always to round down to the nearest million, making it 4 million, round to the nearest million, making it 5, or round to one decimal place, making it 4.6 million? Since the aim is to simplify the numbers and not introduce a false sense of precision, let’s round to the nearest million.
 
@@ -248,14 +279,22 @@ I will define my own function to do such a conversion. It’s a generic function
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 def roundToMillions (value):
 result = round(value / 1000000)
@@ -265,9 +304,13 @@ return result
 
 A function definition always starts with 
 
-```python
+
+
+{:.input_area}
+```
 __def__
 ```
+
 
  , which is a reserved word in Python.
 
@@ -277,57 +320,86 @@ Next comes the function’s body, where the calculations are done, using the arg
 
 For this function, the calculation is simple. I take the value, divide it by one million, and call the built-in Python function 
 
-```python
+
+
+{:.input_area}
+```
 __round()__
 ```
+
 
  to convert that number to the nearest integer. If the number is exactly mid-way between two integers, 
 
-```python
+
+
+{:.input_area}
+```
 __round()__
 ```
 
+
  will pick the even integer, i.e. 
 
-```python
+
+
+{:.input_area}
+```
 __round(2.5)__
 ```
 
+
  is 2 but 
 
-```python
+
+
+{:.input_area}
+```
 __round(3.5)__
 ```
 
+
  is 4.Finally, I write a __return statement__ to pass the result back to the code that called the function. The 
 
-```python
+
+
+{:.input_area}
+```
 __return__
 ```
+
 
  word is also reserved in Python.
 
 The 
 
-```python
+
+
+{:.input_area}
+```
 __result__
 ```
+
 
  variable just stores the rounded value temporarily and has no other purpose. It‘s better to write the body as a single line of code:
 
 
 
-```python
+
+
+{:.input_area}
+```
 return round(value / 1000000)
 ```
-
 
 
 Finally I need to test the function, by calling it with various argument values and checking whether the returned value is equal to what I expect.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -335,7 +407,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 roundToMillions(4567890.1) == 5
 ```
 
@@ -343,7 +420,12 @@ roundToMillions(4567890.1) == 5
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -351,10 +433,14 @@ __Out[]:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 True
 ```
-
 
 
 The art of testing is to find as few test cases as possible that cover all bases. And I mean all, especially those you think ‘Naaah, it’ll never happen’. It will, because data can be incorrect. Prepare for the worst and hope for the best.
@@ -363,7 +449,10 @@ So here are some more tests, even for the unlikely cases of the GDP being zero o
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -371,7 +460,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 roundToMillions(0) == 0 # always test with zero...
 ```
 
@@ -379,7 +473,12 @@ roundToMillions(0) == 0 # always test with zero...
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -387,7 +486,12 @@ __Out[]:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 True
 ```
 
@@ -395,7 +499,12 @@ True
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -403,7 +512,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 roundToMillions(-1) == 0 #...and negative numbers
 ```
 
@@ -411,7 +525,12 @@ roundToMillions(-1) == 0 #...and negative numbers
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -419,7 +538,12 @@ __Out[]:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 True
 ```
 
@@ -427,7 +551,12 @@ True
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -435,7 +564,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 roundToMillions(1499999) == 1 # test rounding to the nearest
 
@@ -445,7 +579,12 @@ roundToMillions(1499999) == 1 # test rounding to the nearest
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -453,24 +592,36 @@ __Out[]:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 True
 ```
-
 
 
 Now for the next conversion, from US dollars to a local currency, for example British pounds. I searched the internet for ‘average yearly USD to GBP rate’, chose a conversion service and took the value for 2013. Here’s the code and some tests.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 def usdToGbp (usd):
 return usd / 1.564768 # average rate during 2013
@@ -480,7 +631,12 @@ usdToGbp(0) == 0
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -488,7 +644,12 @@ __Out[]:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 True
 ```
 
@@ -496,7 +657,12 @@ True
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -504,7 +670,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 usdToGbp(1.564768) == 1
 ```
 
@@ -512,7 +683,12 @@ usdToGbp(1.564768) == 1
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -520,7 +696,12 @@ __Out[]:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 True
 ```
 
@@ -528,7 +709,12 @@ True
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -536,7 +722,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 usdToGbp(-1) &lt; 0
 ```
 
@@ -544,7 +735,12 @@ usdToGbp(-1) &lt; 0
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -552,17 +748,19 @@ __Out[]:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 True
 ```
 
 
-
 Defining functions is such an important part of coding, that you should not skip the next exercise where you will define your own functions.
 
-
 ### Exercise 2 Defining functions
-
 
 #### Question
 
@@ -570,16 +768,12 @@ Complete Exercise 2 in the Exercise notebook 3 to practise defining your own fun
 
 
 
-
 ## 1.3 What if...?
-
 
 The third conversion, from abbreviated country names to full names, can’t be written as a simple formula, because each abbreviation is expanded differently.
 
-
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1036.jpg)
 __Figure 3__
-
 
 What I need is the Python code equivalent of:
 * if the name is ‘UK’, return ‘United Kingdom’,if the name is ‘UK’, return ‘United Kingdom’,
@@ -590,14 +784,22 @@ The last part basically says that if the name is none of the known abbreviations
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 def expandCountry (name):
 	if name == 'UK': # if the name is 'UK'
@@ -614,7 +816,12 @@ expandCountry('India') == 'India'
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -622,31 +829,47 @@ __Out[]:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 True
 ```
 
 
-
 Note that ‘otherwise if’ is written 
 
-```python
+
+
+{:.input_area}
+```
 __'elif'__
 ```
 
+
  in Python, not 
 
-```python
+
+
+{:.input_area}
+```
 __'else if'__
 ```
+
 
 . As you might expect, ‘if’, ‘elif’ and ‘else’ are reserved words.
 
 The computer will evaluate one condition at a time, from top to bottom, and execute only the instructions of the first condition that is true. Note that there is no condition after 
 
-```python
+
+
+{:.input_area}
+```
 __'else'__
 ```
+
 
  , it is a ‘catch all’ in case all previous conditions fail.
 
@@ -654,28 +877,44 @@ Note again the colons at the end of lines and that code after the colon must be 
 
 There are almost always many ways to write the same function. A __conditional statement__ does not need to have an 
 
-```python
+
+
+{:.input_area}
+```
 __'elif'__
 ```
 
+
  or 
 
-```python
+
+
+{:.input_area}
+```
 __'else'__
 ```
+
 
  part. In that case, if the condition is false, nothing happens. Here is the same function, written differently.
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 def expandCountry (name):
 	if name == 'UK':
@@ -688,15 +927,17 @@ def expandCountry (name):
 
 You will see later this week an example of an ‘if-else’ statement, i.e. without the 
 
-```python
+
+
+{:.input_area}
+```
 __'elif'__
 ```
 
+
  part.
 
-
 ### Exercise 3 What if…?
-
 
 #### Question
 
@@ -704,9 +945,7 @@ Complete Exercise 3 in the Exercise notebook 3 to practise writing functions wit
 
 
 
-
 ## 1.4 Applying functions
-
 
 Having coded the three data conversion functions, they can be applied to the GDP table.
 
@@ -714,14 +953,22 @@ I first select the relevant column:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 column = gdp['Country']
 column
@@ -730,14 +977,24 @@ column
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 0              UK
 1             USA
@@ -750,15 +1007,22 @@ Name: Country, dtype: object
 
 Next, I use the column method 
 
-```python
+
+
+{:.input_area}
+```
 __apply()__
 ```
+
 
  , which applies a given function to each cell in the column, returning a new column, in which each cell is the conversion of the corresponding original cell:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
@@ -766,7 +1030,12 @@ __In []:__
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 column.apply(expandCountry)
 ```
 
@@ -774,14 +1043,24 @@ column.apply(expandCountry)
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 0    United Kingdom
 1     United States
@@ -796,14 +1075,21 @@ Finally, I add that new column to the dataframe, using a new column heading:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []__
 ```
+
 
  :
 
 
-```python
+
+
+{:.input_area}
+```
 
 gdp['Country name'] = column.apply(expandCountry)
 gdp
@@ -812,7 +1098,12 @@ gdp
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -860,28 +1151,44 @@ __Out[]:__
 </table>
 In a similar way, I can convert the US dollars to British pounds, then round to the nearest million, and store the result in a new column. I could apply the conversion and rounding functions in two separate statements, but using __method chaining__ , I can apply both functions in a single line of code. This is possible because the column returned by the first call of 
 
-```python
+
+
+{:.input_area}
+```
 __apply()__
 ```
+
 
  is the context for the second call of 
 
-```python
+
+
+{:.input_area}
+```
 __apply()__
 ```
+
 
 . Here’s how it’s written:
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 column = gdp['GDP (US$)']
 
@@ -894,7 +1201,12 @@ gdp
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -950,14 +1262,22 @@ Now it’s just a matter of selecting the two new columns, as the original ones 
 
 
 
-```python
+
+
+{:.input_area}
+```
 __In []:__
 ```
 
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 
 headings = ['Country name', 'GDP (£m)']
 gdp = gdp[headings]
@@ -967,7 +1287,12 @@ gdp
 
 
 
-```python
+
+
+
+
+{:.input_area}
+```
 __Out[]:__
 ```
 
@@ -1009,29 +1334,39 @@ __Out[]:__
 </table>
 Note that method chaining only works if the methods chained return the same type of value as their context, in the same way that you can chain multiple arithmetic operators (e.g. 3+4-5) because each one takes two numbers and returns a number that is used by the next operator in the chain. In this course, methods only have two possible contexts, columns and dataframes, so you can either chain column methods that return a single column (that is a 
 
-```python
+
+
+{:.input_area}
+```
 __Series__
 ```
 
+
  ), like 
 
-```python
+
+
+{:.input_area}
+```
 __apply()__
 ```
 
+
  , or dataframe methods that return dataframes. For example, 
 
-```python
+
+
+{:.input_area}
+```
 __gdp.head(4).tail(2)__
 ```
+
 
  is a dataframe just with China and Brazil, i.e. the last two of the first four rows of the dataframe shown above. You’ll see further examples of chaining (and an easier way to select multiple rows) later this week.
 
 This concludes the data transformation part. After applying functions in the next exercise, you’ll learn how to combine two tables.
 
-
 ### Exercise 4 Applying functions
-
 
 #### Question
 
