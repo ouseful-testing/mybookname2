@@ -1,15 +1,3 @@
----
-redirect_from:
-  - "/features/test--11-3"
-title: 'test 1'
-prev_page:
-  url: /features/notebooks
-  title: 'Jupyter notebooks'
-next_page:
-  url: /version_control
-  title: 'Turing Way chapter'
-comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
----
 # 1 Loading the weather data
 
 

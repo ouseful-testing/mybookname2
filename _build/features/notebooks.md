@@ -1,13 +1,14 @@
 ---
 interact_link: content/features/notebooks.ipynb
 kernel_name: python3
+has_widgets: false
 title: 'Jupyter notebooks'
 prev_page:
   url: /features/markdown
   title: 'Markdown files'
 next_page:
-  url: /version_control
-  title: 'Turing Way chapter'
+  url: /features/test__11_3
+  title: 'test 1'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
@@ -97,6 +98,28 @@ You can also remove some content before publishing your book to the web. For exa
 in [the original notebook](https://github.com/jupyter/jupyter-book/blob/master/notebooks/introduction/notebooks.ipynb) there
 used to be a cell below...
 
+
+
+{:.input_area}
+```python
+# HIDDEN
+thisvariable = "none of this should show up in the textbook"
+
+fig, ax = plt.subplots()
+x = np.random.randn(100)
+y = np.random.randn(100)
+ax.scatter(x, y, s=np.abs(x*100), c=x, cmap=plt.cm.coolwarm)
+ax.text(0, .5, thisvariable, fontsize=20, transform=ax.transAxes)
+ax.set_axis_off()
+```
+
+
+
+{:.output .output_png}
+![png](../images/features/notebooks_5_0.png)
+
+
+
 You can also **remove only the code** so that images and other output still show up.
 
 Below we'll *only* display an image. It was generated with Python code in a cell,
@@ -104,10 +127,23 @@ which you can [see in the original notebook](https://github.com/jupyter/jupyter-
 
 
 
+{:.input_area}
+```python
+# NO CODE
+thisvariable = "this plot *will* show up in the textbook."
+
+fig, ax = plt.subplots()
+x = np.random.randn(100)
+y = np.random.randn(100)
+ax.scatter(x, y, s=np.abs(x*100), c=x, cmap=plt.cm.coolwarm)
+ax.text(0, .5, thisvariable, fontsize=20, transform=ax.transAxes)
+ax.set_axis_off()
+```
+
 
 
 {:.output .output_png}
-![png](../images/features/notebooks_6_0.png)
+![png](../images/features/notebooks_7_0.png)
 
 
 
@@ -115,6 +151,13 @@ And here we'll *only* display a Pandas DataFrame. Again, this was generated with
 from [this original notebook](https://github.com/jupyter/textbooks-with-jupyter/blob/master/notebooks/introduction/notebooks.ipynb).
 
 
+
+{:.input_area}
+```python
+# NO CODE
+import pandas as pd
+pd.DataFrame([['hi', 'there'], ['this', 'is'], ['a', 'DataFrame']], columns=['Word A', 'Word B'])
+```
 
 
 

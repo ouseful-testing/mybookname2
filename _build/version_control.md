@@ -3,8 +3,8 @@ redirect_from:
   - "/version-control"
 title: 'Turing Way chapter'
 prev_page:
-  url: /features/notebooks
-  title: 'Jupyter notebooks'
+  url: /features/test__11_3
+  title: 'test 1'
 next_page:
   url: 
   title: ''
