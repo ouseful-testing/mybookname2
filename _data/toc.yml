@@ -9,123 +9,123 @@
   search: true
 - divider: true
 - header: Demo OpenLearn Thing
-- title: test__7_3.md
-  url: /testdir/test__7_3
+- title: test_7_3.md
+  url: /testdir/test_7_3
   not_numbered: 'true'
   sections:
-  - title: test__7_4
-    url: /testdir/test__7_4
+  - title: test_7_4
+    url: /testdir/test_7_4
     not_numbered: 'true'
-  - title: test__7_5
-    url: /testdir/test__7_5
+  - title: test_7_5
+    url: /testdir/test_7_5
     not_numbered: 'true'
-- title: test__8_3.md
-  url: /testdir/test__8_3
+- title: test_8_3.md
+  url: /testdir/test_8_3
   not_numbered: 'true'
   sections:
-  - title: test__8_4
-    url: /testdir/test__8_4
+  - title: test_8_4
+    url: /testdir/test_8_4
     not_numbered: 'true'
-  - title: test__8_5
-    url: /testdir/test__8_5
+  - title: test_8_5
+    url: /testdir/test_8_5
     not_numbered: 'true'
-  - title: test__8_6
-    url: /testdir/test__8_6
+  - title: test_8_6
+    url: /testdir/test_8_6
     not_numbered: 'true'
-- title: test__9_3.md
-  url: /testdir/test__9_3
+- title: test_9_3.md
+  url: /testdir/test_9_3
   not_numbered: 'true'
   sections:
-  - title: test__9_4
-    url: /testdir/test__9_4
+  - title: test_9_4
+    url: /testdir/test_9_4
     not_numbered: 'true'
-  - title: test__9_5
-    url: /testdir/test__9_5
+  - title: test_9_5
+    url: /testdir/test_9_5
     not_numbered: 'true'
-  - title: test__9_6
-    url: /testdir/test__9_6
+  - title: test_9_6
+    url: /testdir/test_9_6
     not_numbered: 'true'
-- title: test__10_3.md
-  url: /testdir/test__10_3
+- title: test_10_3.md
+  url: /testdir/test_10_3
   not_numbered: 'true'
   sections:
-  - title: test__10_4
-    url: /testdir/test__10_4
+  - title: test_10_4
+    url: /testdir/test_10_4
     not_numbered: 'true'
-  - title: test__10_5
-    url: /testdir/test__10_5
+  - title: test_10_5
+    url: /testdir/test_10_5
     not_numbered: 'true'
-  - title: test__10_6
-    url: /testdir/test__10_6
+  - title: test_10_6
+    url: /testdir/test_10_6
     not_numbered: 'true'
-- title: test__11_3.ipynb
-  url: /testdir/test__11_3
+- title: test_11_3.ipynb
+  url: /testdir/test_11_3
   not_numbered: 'true'
   sections:
-  - title: test__11_4
-    url: /testdir/test__11_4
+  - title: test_11_4
+    url: /testdir/test_11_4
     not_numbered: 'true'
-  - title: test__11_5
-    url: /testdir/test__11_5
+  - title: test_11_5
+    url: /testdir/test_11_5
     not_numbered: 'true'
-  - title: test__11_6
-    url: /testdir/test__11_6
+  - title: test_11_6
+    url: /testdir/test_11_6
     not_numbered: 'true'
-  - title: test__11_7
-    url: /testdir/test__11_7
+  - title: test_11_7
+    url: /testdir/test_11_7
     not_numbered: 'true'
-- title: test__12_3.md
-  url: /testdir/test__12_3
+- title: test_12_3.md
+  url: /testdir/test_12_3
   not_numbered: 'true'
   sections:
-  - title: test__12_4
-    url: /testdir/test__12_4
+  - title: test_12_4
+    url: /testdir/test_12_4
     not_numbered: 'true'
-  - title: test__12_5
-    url: /testdir/test__12_5
+  - title: test_12_5
+    url: /testdir/test_12_5
     not_numbered: 'true'
-  - title: test__12_6
-    url: /testdir/test__12_6
+  - title: test_12_6
+    url: /testdir/test_12_6
     not_numbered: 'true'
-- title: test__13_3.md
-  url: /testdir/test__13_3
+- title: test_13_3.md
+  url: /testdir/test_13_3
   not_numbered: 'true'
   sections:
-  - title: test__13_4
-    url: /testdir/test__13_4
+  - title: test_13_4
+    url: /testdir/test_13_4
     not_numbered: 'true'
-  - title: test__13_5
-    url: /testdir/test__13_5
+  - title: test_13_5
+    url: /testdir/test_13_5
     not_numbered: 'true'
-  - title: test__13_6
-    url: /testdir/test__13_6
+  - title: test_13_6
+    url: /testdir/test_13_6
     not_numbered: 'true'
-- title: test__14_3.md
-  url: /testdir/test__14_3
+- title: test_14_3.md
+  url: /testdir/test_14_3
   not_numbered: 'true'
   sections:
-  - title: test__14_4
-    url: /testdir/test__14_4
+  - title: test_14_4
+    url: /testdir/test_14_4
     not_numbered: 'true'
-  - title: test__14_5
-    url: /testdir/test__14_5
+  - title: test_14_5
+    url: /testdir/test_14_5
     not_numbered: 'true'
-  - title: test__14_6
-    url: /testdir/test__14_6
+  - title: test_14_6
+    url: /testdir/test_14_6
     not_numbered: 'true'
-- title: test__15_3.md
-  url: /testdir/test__15_3
+- title: test_15_3.md
+  url: /testdir/test_15_3
   not_numbered: 'true'
   sections:
-  - title: test__15_4
-    url: /testdir/test__15_4
+  - title: test_15_4
+    url: /testdir/test_15_4
     not_numbered: 'true'
-  - title: test__15_5
-    url: /testdir/test__15_5
+  - title: test_15_5
+    url: /testdir/test_15_5
     not_numbered: 'true'
-  - title: test__15_6
-    url: /testdir/test__15_6
+  - title: test_15_6
+    url: /testdir/test_15_6
     not_numbered: 'true'
-  - title: test__15_7
-    url: /testdir/test__15_7
+  - title: test_15_7
+    url: /testdir/test_15_7
     not_numbered: 'true'
