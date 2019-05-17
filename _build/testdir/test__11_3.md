@@ -1,6 +1,9 @@
 ---
 redirect_from:
   - "/testdir/test--11-3"
+interact_link: content/testdir/test__11_3.ipynb
+kernel_name: python3
+has_widgets: false
 title: 'test__11_3.md'
 prev_page:
   url: /testdir/test__10_6
@@ -10,11 +13,10 @@ next_page:
   title: 'test__11_4'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
+
 # 1 Loading the weather data
 
-
 You have learned some more about Python and the pandas module and tried it out on a fairly small dataset. You are now ready to explore a dataset from the Weather Underground.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1039.jpg)
 __Figure 1__
@@ -29,6 +31,9 @@ The CSV file can be loaded into a dataframe by executing the following code:
 `__In []:__`
 
 
+
+
+{:.input_area}
 ```python
 
 from pandas import *
@@ -39,7 +44,6 @@ london.head()
 
 `__Out[]:__`
 
-
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1006.jpg)
 __Figure 2__
 
@@ -49,7 +53,6 @@ First 5 rows of the london dataframe. Note that only the first few columns are s
 In the next section, you’ll find out how to remove rogue spaces.
 
 ---
-
 
 ### Important notice for learners outside of the EU
 
@@ -66,12 +69,9 @@ Now, when you download the data, temperatures will be in Celsius and wind speeds
 
 ---
 
-
 ## 1.1 Removing rogue spaces
 
-
 One of the problems often encountered with CSV files is rogue spaces before or after data values or column names.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1045.jpg)
 __Figure 3__
@@ -80,7 +80,6 @@ An image of empty, numbered parking spaces
 You learned earlier, in What is a CSV file? , that each value or column name is separated by a comma. However, if you opened ‘London_2014.csv’ in a text editor, you would see that in the row of column names sometimes there are spaces after a comma:
 
 >GMT,Max TemperatureC,Mean TemperatureC,Min TemperatureC,Dew PointC,MeanDew PointC,Min DewpointC,Max Humidity, Mean Humidity, Min Humidity, Max Sea Level PressurehPa, Mean Sea Level PressurehPa, Min Sea Level PressurehPa, Max VisibilityKm, Mean VisibilityKm, Min VisibilitykM, Max Wind SpeedKm/h, Mean Wind SpeedKm/h, Max Gust SpeedKm/h,Precipitationmm, CloudCover, Events,WindDirDegrees
-
 
 
 
@@ -99,6 +98,9 @@ which will tell `__read_csv()__` to ignore any spaces after a comma:
 `__In []:__`
 
 
+
+
+{:.input_area}
 ```python
 
 
@@ -147,9 +149,7 @@ Note that a `__skipinitialspace=True__` argument won’t remove a trailing space
 
 Next, find out about extra characters and how to remove them.
 
-
 ## 1.2 Removing extra characters
-
 
 If you opened London_2014.csv in a text editor once again and looked at the last column name you would see that the name is'WindDirDegrees
 
@@ -157,7 +157,6 @@ If you opened London_2014.csv in a text editor once again and looked at the last
 
 What has happened here is that when the dataset was exported from the Weather Underground website an html line break `__(
 )__` was added after the line of column headers which `__read_csv()__` has interpreted as the end part of the final column’s name.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1050.jpg)
 __Figure 4__
@@ -271,9 +270,7 @@ Let’s display the first few rows of the ' `__WindDirDegrees__` ' to confirm th
 
 ## 1.3 Missing values
 
-
 As you heard in the video at the start of the week, missing values (also called null values) are one of the reasons to clean data.
-
 
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1051.jpg)
 __Figure 5__
@@ -288,6 +285,9 @@ Finding missing values in a particular column can be done with the column method
 The above code returns a series of Boolean values, where `__True__` indicates that the corresponding row in the `__'Events'__` column is missing a value and `__False__` indicates the presence of a value. Here are the last few rows from the series:
 
 
+
+
+{:.input_area}
 ```python
 
 ...
@@ -317,6 +317,9 @@ The column method `__fillna()__` will replace all non-available values with the 
 `__In []:__`
 
 
+
+
+{:.input_area}
 ```python
 
 london['Events'] = london['Events'].fillna('')
@@ -330,9 +333,7 @@ As a final note on missing values, pandas ignores them when computing numeric st
 
 Learn about checking data types of each column in the next section.
 
-
 ## 1.4 Changing the value types of columns
-
 
 The function `__read_csv()__` may, for many reasons, wrongly interpret the data type of the values in a column, so when cleaning data it’s important to check the data types of each column are what is expected, and if necessary change them.
 
@@ -345,6 +346,9 @@ The data type of every column in a dataframe can be determined by looking at the
 `__Out[]:__`
 
 
+
+
+{:.input_area}
 ```python
 
 GMT object
@@ -383,18 +387,15 @@ Most of the column data types seem fine, however two are of concern, `__'GMT'__`
 
 ---
 
-
-###  Changing the data type of the 'WindDirDegrees' column 
+###  Changing the data type of the 'WindDirDegrees' column
 
 The `__read_csv()__` method has interpreted the values in the `__'WindDirDegrees'__` column as strings (type `__object__` ). This is because in the CSV file the values in that column had all been suffixed with that html line break string `__
 __` so `__read_csv()__` had no alternative but to interpret the values as strings.
 
 The values in the `__'WindDirDegrees'__` column are meant to represent wind direction in terms of degrees from true north (360) and meteorologists always define the wind direction as the direction the wind is coming from. So if you stand so that the wind is blowing directly into your face, the direction you are facing names the wind, so a westerly wind is reported as 270 degrees. The compass rose shown below should make this clearer:
 
-
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1007.jpg)
 __Figure 6__ A compass rose 
-
 
 We need to be able to make queries such as ‘Get and display the rows where the wind direction is greater than 350 degrees’. To do this we need to change the data type of the ‘WindDirDegrees’ column from object to type `__int64__`. We can do that by using the `__astype()__` method like this:
 
@@ -412,7 +413,6 @@ Now all the values in the `__'WindDirDegrees'__` column are of type `__int64__` 
 
 `__Out[]:__`
 
-
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1008.jpg)
 __Figure 7__
 
@@ -422,7 +422,6 @@ Rows from the london dataframe where the value in the WindDirDegrees column is g
 ---
 
 ---
-
 
 ### Changing the data type of the ‘GMT’ column
 
@@ -437,6 +436,9 @@ Pandas has a function called `__to_datetime()__` which can convert a column of `
 `__In []:__`
 
 
+
+
+{:.input_area}
 ```python
 
 london['GMT'] = to_datetime(london['GMT'])
@@ -451,6 +453,9 @@ london.dtypes
 `__Out[]:__`
 
 
+
+
+{:.input_area}
 ```python
 
 GMT datetime64[ns]
@@ -500,7 +505,6 @@ Let’s try the function out by executing the code to ‘Return the row where th
 
 `__Out[]:__`
 
-
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1009.jpg)
 __Figure 8__
 
@@ -514,6 +518,9 @@ You can also now make more complex queries involving dates such as ‘Return all
 c
 
 
+
+
+{:.input_area}
 ```python
 
 london[(london['GMT'] >= datetime(2014, 12, 8)) 
@@ -523,16 +530,13 @@ london[(london['GMT'] >= datetime(2014, 12, 8))
 
 `__Out[]:__`
 
-
 ![](https://www.open.edu/openlearn/ocw/pluginfile.php/1393338/mod_oucontent/oucontent/71687/ou_futurelearn_learn_to_code_fig_1010.jpg)
 __Figure 9__
 
 The rows from the london dataframe where the date is between 8 December 2014 and 12 December 2014 (inclusive). Note that only the first few columns are shown due to the limitation of page width. 
 *Note that the right side of the table has been cropped to fit on the page. *
 
-
 ### Exercise 4 Display rows from dataframe
-
 
 #### Question
 
@@ -541,7 +545,6 @@ Now try Exercise 4 in the Exercise notebook 2.
 If you’re using Anaconda instead of CoCalc, remember that to open the notebook you’ll need to navigate to the notebook using Jupyter.
 
 Once the notebook is open, run the existing code in the notebook before you start the exercise. When you’ve completed the exercise, save the notebook. If you need a quick reminder of how to use Jupyter, watch again the video in Week 1 Exercise 1.
-
 
 
 ---

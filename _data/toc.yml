@@ -8,7 +8,7 @@
 - title: Search
   search: true
 - divider: true
-- header: Demo textbook
+- header: Demo OpenLearn Thing
 - title: test__7_3.md
   url: /testdir/test__7_3
   not_numbered: 'true'
@@ -58,7 +58,7 @@
   - title: test__10_6
     url: /testdir/test__10_6
     not_numbered: 'true'
-- title: test__11_3.md
+- title: test__11_3.ipynb
   url: /testdir/test__11_3
   not_numbered: 'true'
   sections:
