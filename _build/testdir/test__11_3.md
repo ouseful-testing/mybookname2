@@ -4,7 +4,7 @@ redirect_from:
 interact_link: content/testdir/test__11_3.ipynb
 kernel_name: python3
 has_widgets: false
-title: 'test__11_3.md'
+title: 'test__11_3.ipynb'
 prev_page:
   url: /testdir/test__10_6
   title: 'test__10_6'

@@ -7,7 +7,7 @@ prev_page:
   title: 'test__10_5'
 next_page:
   url: /testdir/test__11_3
-  title: 'test__11_3.md'
+  title: 'test__11_3.ipynb'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # 3 Summary

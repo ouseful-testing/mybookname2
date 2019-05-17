@@ -16,14 +16,14 @@
 
 #######################################################################################
 # Jekyll site settings
-title: Kirstie's second attempt at building a jupyterbook
-author: Kirstie Whitaker
-email: kwhitaker@turing.ac.uk
+title: Proof of Concept - OU-XML to Jupyter Book
+author: Tony Hirst
+email: tony.hirst@open.ac.uk
 description: >-
-  This is an example book built with Jupyter Books.
+  This is an example book built with Jupyter Books from .md generated from OU-XML. Jupytext can also convert files to .ipynb
 
 baseurl: /               # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
-url: https://kirstiejane.github.io/mybookname2    # the base hostname & protocol for your site, e.g. http://example.com
+url: https://ouseful-testing.github.io/mybookname2    # the base hostname & protocol for your site, e.g. http://example.com
 
 
 #######################################################################################

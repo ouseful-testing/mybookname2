@@ -4,7 +4,7 @@ redirect_from:
 title: 'test__11_4'
 prev_page:
   url: /testdir/test__11_3
-  title: 'test__11_3.md'
+  title: 'test__11_3.ipynb'
 next_page:
   url: /testdir/test__11_5
   title: 'test__11_5'

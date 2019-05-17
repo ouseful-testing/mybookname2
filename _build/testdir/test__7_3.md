@@ -6,7 +6,7 @@ prev_page:
   url: https://github.com/jupyter/jupyter-book
   title: 'GitHub repository'
 next_page:
-  url: /test__7_4
+  url: /testdir/test__7_4
   title: 'test__7_4'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
