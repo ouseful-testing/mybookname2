@@ -59,15 +59,3 @@
 - title: Turing Way chapter
   url: /version_control
   not_numbered: true
-
-- title: OpenLearn Bits
-  url: /openlearn/test__8_3
-  not_numbered: true
-  expand_sections: true
-  sections:
-    - title: test1
-      url: /openlearn/test__11_3
-      not_numbered: true
-    - title: test1
-      url: /openlearn/test__11_4
-      not_numbered: true
